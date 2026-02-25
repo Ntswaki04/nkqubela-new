@@ -1,73 +1,92 @@
 ﻿import Link from 'next/link';
-import Image from 'next/image';
+import { Icon } from '@iconify/react';
 
 export default function Footer() {
+    const year = new Date().getFullYear();
+
     return (
-        <footer className="bg-[#102C46] text-white pt-16 pb-8">
-            <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                    {/* Company Info */}
-                    <div>
-                        <Image
-                            src="/images/logo/Nkqubela-Technologies-Logo.png"
-                            alt="Nkqubela Technologies"
-                            width={150}
-                            height={50}
-                            className="mb-6 h-auto w-auto"
-                        />
-                        <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                            Delivering innovative ICT solutions and fostering a culture of continuous innovation.
-                        </p>
+        <div className="footer-wrapper">
+            <footer className="footer-container">
+                {/* Logo Overlapping Top */}
+                <div className="footer-grid">
+                    {/* Social Icons */}
+                    <div className="footer-social-column">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="footer-social-icon">
+                            <Icon icon="mdi:linkedin" />
+                        </a>
+                        {/* <a href="#" className="footer-social-icon">
+                            <Icon icon="mdi:twitter" />
+                        </a> */}
                     </div>
 
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-lg font-bold mb-6 text-white">Quick Links</h4>
-                        <ul className="space-y-3">
-                            <li><Link href="/about" className="text-black-300 hover:text-white transition-colors text-sm">About Us</Link></li>
-                            <li><Link href="/services" className="text-gray-300 hover:text-white transition-colors text-sm">Our Services</Link></li>
-                            <li><Link href="/team" className="text-gray-300 hover:text-white transition-colors text-sm">Leadership Team</Link></li>
-                            <li><Link href="/careers" className="text-gray-300 hover:text-white transition-colors text-sm">Careers</Link></li>
-                            <li><Link href="/contact" className="text-gray-300 hover:text-white transition-colors text-sm">Contact Us</Link></li>
+                    <div className="footer-v-divider hidden lg:block"></div>
+
+                    {/* Quick Links Column */}
+                    <div className="footer-column">
+                        <h3 className="footer-column-title">Quick Links</h3>
+                        <ul className="footer-link-list">
+                            <li><Link href="/services" className="footer-link-item">UI design</Link></li>
+                            <li><Link href="/services" className="footer-link-item">UX design</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Wireframing</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Diagramming</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Brainstorming</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Online whiteboard</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Team collaboration</Link></li>
                         </ul>
                     </div>
 
-                    {/* Services */}
-                    <div>
-                        <h4 className="text-lg font-bold mb-6 text-white">Our Services</h4>
-                        <ul className="space-y-3">
-                            <li><Link href="/services#ict" className="text-gray-300 hover:text-white transition-colors text-sm">ICT Resourcing</Link></li>
-                            <li><Link href="/services#infrastructure" className="text-gray-300 hover:text-white transition-colors text-sm">Infrastructure</Link></li>
-                            <li><Link href="/services#security" className="text-gray-300 hover:text-white transition-colors text-sm">Security Solutions</Link></li>
-                            <li><Link href="/services#software" className="text-gray-300 hover:text-white transition-colors text-sm">Software Solutions</Link></li>
+                    <div className="footer-v-divider hidden lg:block"></div>
+
+                    {/* Contact Us Column */}
+                    <div className="footer-column">
+                        <h3 className="footer-column-title">Contact Us</h3>
+                        <ul className="footer-link-list">
+                            <li><Link href="/services" className="footer-link-item">UI design</Link></li>
+                            <li><Link href="/services" className="footer-link-item">UX design</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Wireframing</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Diagramming</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Brainstorming</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Online whiteboard</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Team collaboration</Link></li>
                         </ul>
                     </div>
 
-                    {/* Contact Info */}
-                    <div>
-                        <h4 className="text-lg font-bold mb-6 text-white">Contact Us</h4>
-                        <ul className="space-y-3 text-sm">
-                            <li className="flex items-start gap-3 text-gray-300">
-                                <span className="iconify mt-1 flex-shrink-0 text-gray-400" data-icon="mdi:map-marker"></span>
-                                <span>123 Business Park, Johannesburg, South Africa</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-gray-300">
-                                <span className="iconify flex-shrink-0 text-gray-400" data-icon="mdi:phone"></span>
-                                <span>+27 11 123 4567</span>
-                            </li>
-                            <li className="flex items-center gap-3 text-gray-300">
-                                <span className="iconify flex-shrink-0 text-gray-400" data-icon="mdi:email"></span>
-                                <span>info@nkqubela.co.za</span>
-                            </li>
+                    <div className="footer-v-divider hidden lg:block"></div>
+
+                    {/* Use Cases Column */}
+                    <div className="footer-column">
+                        <h3 className="footer-column-title">Use cases</h3>
+                        <ul className="footer-link-list">
+                            <li><Link href="/services" className="footer-link-item">UI design</Link></li>
+                            <li><Link href="/services" className="footer-link-item">UX design</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Wireframing</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Diagramming</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Brainstorming</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Online whiteboard</Link></li>
+                            <li><Link href="/services" className="footer-link-item">Team collaboration</Link></li>
                         </ul>
+                    </div>
+
+                    <div className="footer-v-divider hidden lg:block"></div>
+
+                    {/* Search Column */}
+                    <div className="footer-search-container">
+                        <div className="footer-search-box">
+                            <input
+                                type="text"
+                                placeholder="Search.."
+                                className="footer-search-input"
+                            />
+                            <Icon icon="ic:round-search" className="footer-search-icon" />
+                        </div>
                     </div>
                 </div>
 
                 {/* Copyright */}
-                <div className="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
-                    <p>&copy; {new Date().getFullYear()} Nkqubela Technologies. All rights reserved.</p>
+                <div className="footer-copyright">
+                    <p>© {year} Nkqubela Technologies. All Rights Reserved.</p>
                 </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
     );
 }

@@ -1,7 +1,7 @@
 // app/page.tsx
 "use client";
 
-import { useEffect, useRef, useState, useLayoutEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type SwiperType from 'swiper';
 import ServicesCarousel from '@/components/sections/Home/ServicesCarousel';
 import LeadershipTeam from '@/components/sections/Home/LeadershipTeam';
@@ -23,7 +23,7 @@ export default function Home() {
         testimonial?: SwiperType;
     }>({});
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setIsClient(true);
     }, []);
@@ -95,7 +95,11 @@ export default function Home() {
 
             {/* Video Modal */}
             {isVideoModalOpen && (
-                <VideoModal closeVideoModal={closeVideoModal} />
+                <VideoModal
+                    isOpen={isVideoModalOpen}
+                    videoUrl={videoUrl}
+                    onClose={closeVideoModal}
+                />
             )}
         </>
     );

@@ -2,190 +2,204 @@
 "use client";
 
 import { useEffect } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import { Icon } from '@iconify/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-export default function AboutPage() {
+export default function About() {
     useEffect(() => {
-        // Initialize AOS (Animate on Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true,
-        });
+        AOS.init({ duration: 1000, once: true, offset: 50 });
     }, []);
 
     return (
-        <>
-            <main className="pt-32">
-                {/* Hero Section */}
-                <section className="video-hero">
-                    <video autoPlay muted loop playsInline className="video-hero-bg">
-                        <source src="/videos/7414133-hd_1920_1080_24fps.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <div className="video-hero-overlay"></div>
-                    <div className="container video-hero-content" data-aos="zoom-out">
-                        <h1 className="font-bold text-white mb-6 text-5xl lg:text-7xl">Our Story</h1>
-                        <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed font-medium">
-                            Over 20 years of delivering excellence in systems integration and ICT solutions.
-                        </p>
-                    </div>
-                </section>
+        <main>
+            {/* Hero Section */}
+            <section className="video-hero mt-24">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                    src="/images/hero bg all.png"
+                    alt="Our Story"
+                    className="video-hero-bg"
+                />
+                <div className="video-hero-overlay"></div>
+                <div className="video-hero-content text-center px-4 max-w-4xl">
+                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-6" data-aos="fade-up">
+                        Our Story
+                    </h1>
+                    <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="100">
+                        Over 20 years of delivering excellence in systems integration and ICT solutions.
+                    </p>
+                </div>
+            </section>
 
-                {/* Company Overview */}
-                <section className="py-24">
-                    <div className="container">
-                        <div className="grid lg:grid-cols-2 gap-16 items-center">
-                            <div data-aos="fade-right">
-                                <h2 className="font-bold dark:text-white mb-8 text-3xl md:text-4xl">Simplifying Complexity for Two Decades</h2>
-                                <div className="space-y-6 text-lg text-SlateBlueText dark:text-darktext leading-relaxed">
-                                    <p>
-                                        Nkqubela Technologies is a leading systems integrator with a deep-rooted history of
-                                        helping clients navigate the complex landscape of information technology. Since our
-                                        inception, we have been committed to delivering high-quality, scalable solutions that
-                                        drive business growth.
-                                    </p>
-                                    <p>
-                                        Based in South Africa, we have grown from a specialized ICT resourcing firm into a
-                                        full-scale technology partner, providing everything from software development and
-                                        information security to infrastructure management.
-                                    </p>
-                                </div>
+            {/* Our Story / Get to Know Us */}
+            <section className="bg-white dark:bg-darkmode py-32 overflow-hidden">
+                <div className="container">
+                    <div className="grid lg:grid-cols-2 items-center gap-20">
+                        <div className="space-y-8" data-aos="fade-right">
+                            <div className="inline-block px-4 py-1.5 border border-primary/20 rounded-full bg-primary/5">
+                                <span className="text-primary text-xs font-bold uppercase tracking-widest">Get to Know Us</span>
                             </div>
-                            <div className="relative lg:block hidden" data-aos="fade-left">
-                                <div className="flex items-center justify-center gap-6">
-                                    {/* Left Card (Man) */}
-                                    <div className="relative z-10">
-                                        <div className="w-64 h-80 bg-[#4CC9F0] rounded-tl-[100px] rounded-br-[100px] relative overflow-visible shadow-2xl group hover:scale-105 transition-transform duration-500">
-                                            <div className="absolute bottom-0 left-0 w-full h-[115%] overflow-hidden rounded-tl-[100px] rounded-br-[100px]">
-                                                <Image
-                                                    src="/images/hero/hero-man.png"
-                                                    alt="Hero Man"
-                                                    width={256}
-                                                    height={320}
-                                                    className="w-full h-full object-cover object-top scale-110 translate-y-2"
-                                                />
-                                            </div>
-                                            <div className="absolute top-10 -left-12 bg-[#FEE440] text-slate-800 px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce-slow">
-                                                <div className="bg-white/30 p-2 rounded-full">
-                                                    <span className="iconify text-xl" data-icon="ic:round-star"></span>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-sm leading-none">20+ Years</h4>
-                                                    <p className="text-[10px] font-bold opacity-75 uppercase tracking-wide">Experience</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <h2 className="text-5xl font-bold dark:text-white leading-tight">
+                                Simplifying <br />
+                                Complexity for Two <br />
+                                Decades
+                            </h2>
 
-                                    {/* Right Card (Woman) */}
-                                    <div className="relative mt-24 z-0">
-                                        <div className="w-64 h-80 bg-[#4361EE] rounded-tr-[100px] rounded-bl-[100px] relative overflow-visible shadow-2xl group hover:scale-105 transition-transform duration-500">
-                                            <div className="absolute bottom-0 left-0 w-full h-[115%] overflow-hidden rounded-tr-[100px] rounded-bl-[100px]">
-                                                <Image
-                                                    src="/images/hero/hero-woman.png"
-                                                    alt="Hero Woman"
-                                                    width={256}
-                                                    height={320}
-                                                    className="w-full h-full object-cover object-top scale-110 translate-y-2"
-                                                />
-                                            </div>
-                                            <div className="absolute top-12 -right-16 bg-[#4ade80] text-slate-900 px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 animate-pulse-slow">
-                                                <div className="bg-white/30 p-2 rounded-full">
-                                                    <span className="iconify text-xl" data-icon="ic:round-verified"></span>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-sm leading-none">100%</h4>
-                                                    <p className="text-[10px] font-bold opacity-75 uppercase tracking-wide">Commitment</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-blue-100/50 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Mission & Vision */}
-                <section className="py-24 bg-gray-50 dark:bg-darkmode">
-                    <div className="container">
-                        <div className="grid md:grid-cols-2 gap-12">
-                            <div className="p-12 bg-white dark:bg-darklight rounded-22 shadow-lg border border-gray-100 dark:border-dark_border"
-                                data-aos="fade-up">
-                                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
-                                    <span className="iconify text-3xl" data-icon="ic:round-rocket"></span>
-                                </div>
-                                <h3 className="font-bold dark:text-white mb-4 text-2xl">Our Mission</h3>
-                                <p className="text-SlateBlueText dark:text-darktext text-lg leading-relaxed">
-                                    Helping clients solve problems and achieve business goals efficiently and cost-effectively
-                                    through innovative technology and expert consultation.
+                            <div className="space-y-6 text-xl text-SlateBlueText dark:text-darktext leading-relaxed font-medium">
+                                <p>
+                                    Nkqubela Technologies is a leading systems integrator with a deep-rooted history
+                                    of helping clients navigate the complex landscape of information technology.
+                                    Since our inception, we have been committed to delivering high-quality,
+                                    scalable solutions that drive business growth.
                                 </p>
-                            </div>
-                            <div className="p-12 bg-white dark:bg-darklight rounded-22 shadow-lg border border-gray-100 dark:border-dark_border"
-                                data-aos="fade-up" data-aos-delay="200">
-                                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
-                                    <span className="iconify text-3xl" data-icon="ic:round-visibility"></span>
-                                </div>
-                                <h3 className="font-bold dark:text-white mb-4 text-2xl">Our Vision</h3>
-                                <p className="text-SlateBlueText dark:text-darktext text-lg leading-relaxed">
-                                    To be the most trusted technology partner in Africa, empowering organizations with
-                                    cutting-edge digital integration and fostering a culture of continuous innovation.
+                                <p>
+                                    Based in South Africa, we have grown from a specialized ICT resourcing firm
+                                    into a full-scale technology partner, providing everything from software
+                                    development and information security to infrastructure management.
                                 </p>
                             </div>
                         </div>
+                        <div data-aos="fade-left">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/images/get to know us.png"
+                                alt="Get to Know Us"
+                                className="w-full h-auto rounded-[2rem] shadow-2xl"
+                            />
+                        </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                {/* Core Values */}
-                <section className="py-24">
-                    <div className="container">
-                        <div className="text-center mb-16" data-aos="fade-up">
-                            <h2 className="font-bold dark:text-white text-3xl md:text-4xl">Our Core Values</h2>
-                            <p className="text-SlateBlueText dark:text-darktext max-w-2xl mx-auto mt-4 text-lg">
-                                The principles that guide everything we do.
+            {/* Vision Section */}
+            <section className="bg-white dark:bg-darkmode py-32 overflow-hidden">
+                <div className="container">
+                    <div className="grid lg:grid-cols-2 items-center gap-20">
+                        <div data-aos="fade-right">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/images/vision.png"
+                                alt="Our Vision"
+                                className="w-full h-auto rounded-[2rem] shadow-2xl"
+                            />
+                        </div>
+                        <div className="space-y-8" data-aos="fade-left">
+                            <div className="inline-block px-4 py-1.5 border border-primary/20 rounded-full bg-primary/5">
+                                <span className="text-primary text-xs font-bold uppercase tracking-widest">Our Vision</span>
+                            </div>
+                            <h2 className="text-5xl md:text-6xl font-bold dark:text-white leading-tight">Vision</h2>
+                            <p className="text-xl text-SlateBlueText dark:text-darktext leading-relaxed font-medium">
+                                Our vision is to pioneer excellence in systems integration, redefining industry standards and
+                                setting new benchmarks for seamless connectivity and optimized functionality. Through
+                                innovation, strategic partnerships, and a relentless pursuit of excellence, we aim to
+                                revolutionize the landscape of system integration, delivering unparalleled value to our
+                                clients.
                             </p>
                         </div>
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {/* Value 1: Innovation */}
-                            <div className="text-center p-8 space-y-4" data-aos="zoom-in" data-aos-delay="0">
-                                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto">
-                                    <span className="iconify text-4xl" data-icon="ic:round-lightbulb"></span>
-                                </div>
-                                <h4 className="font-bold dark:text-white text-xl">Innovation</h4>
-                                <p className="text-SlateBlueText dark:text-darktext">Constantly pushing boundaries to find better ways.</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Mission Section */}
+            <section className="bg-gray-50 dark:bg-darklight py-32 overflow-hidden">
+                <div className="container">
+                    <div className="grid lg:grid-cols-2 items-center gap-20">
+                        <div className="order-2 lg:order-1 space-y-8" data-aos="fade-right">
+                            <div className="inline-block px-4 py-1.5 border border-primary/20 rounded-full bg-primary/5">
+                                <span className="text-primary text-xs font-bold uppercase tracking-widest">Our Mission</span>
                             </div>
-                            {/* Value 2: Excellence */}
-                            <div className="text-center p-8 space-y-4" data-aos="zoom-in" data-aos-delay="100">
-                                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto">
-                                    <span className="iconify text-4xl" data-icon="ic:round-star"></span>
-                                </div>
-                                <h4 className="font-bold dark:text-white text-xl">Excellence</h4>
-                                <p className="text-SlateBlueText dark:text-darktext">Delivering the highest quality in every project.</p>
-                            </div>
-                            {/* Value 3: Collaboration */}
-                            <div className="text-center p-8 space-y-4" data-aos="zoom-in" data-aos-delay="200">
-                                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto">
-                                    <span className="iconify text-4xl" data-icon="ic:round-groups"></span>
-                                </div>
-                                <h4 className="font-bold dark:text-white text-xl">Collaboration</h4>
-                                <p className="text-SlateBlueText dark:text-darktext">Working together to achieve shared goals.</p>
-                            </div>
-                            {/* Value 4: Solutions */}
-                            <div className="text-center p-8 space-y-4" data-aos="zoom-in" data-aos-delay="300">
-                                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto">
-                                    <span className="iconify text-4xl" data-icon="ic:round-settings-suggest"></span>
-                                </div>
-                                <h4 className="font-bold dark:text-white text-xl">Solutions</h4>
-                                <p className="text-SlateBlueText dark:text-darktext">Tailored approaches for unique business needs.</p>
-                            </div>
+                            <h2 className="text-5xl md:text-6xl font-bold dark:text-white leading-tight uppercase">MISSION</h2>
+                            <p className="text-xl text-SlateBlueText dark:text-darktext leading-relaxed font-medium">
+                                At Nkqubela Technologies, our mission is to embody our core values of innovation, disruption,
+                                and agility. By aligning our resources strategically, we optimize the quality of our
+                                end-products and deliver a superior customer service experience. We foster a culture of
+                                creativity and forward-thinking, challenging norms, and adapting swiftly to evolving needs.
+                            </p>
+                        </div>
+                        <div className="order-1 lg:order-2" data-aos="fade-left">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src="/images/mission.png"
+                                alt="Our Mission"
+                                className="w-full h-auto rounded-[2rem] shadow-2xl"
+                            />
                         </div>
                     </div>
-                </section>
-            </main>
-        </>
+                </div>
+            </section>
+
+            {/* Core Values */}
+            <section className="bg-white dark:bg-darkmode py-32 overflow-hidden">
+                <div className="container px-4">
+                    <div className="mb-16" data-aos="fade-up">
+                        <h2 className="text-4xl md:text-5xl font-bold dark:text-white mb-4">Our Core Values</h2>
+                        <p className="text-SlateBlueText dark:text-darktext text-xl">
+                            The principles that guide everything we do.
+                        </p>
+                    </div>
+
+                    <div className="value-card-container">
+                        {[
+                            {
+                                title: 'Innovation',
+                                desc: 'We foster a culture of continuous innovation, constantly exploring new technologies and ideas to deliver the best solutions for our clients.',
+                                image: '/images/about us hands 2.jpg'
+                            },
+                            {
+                                title: 'Collaboration',
+                                desc: 'We believe in the power of collaboration, working closely with our clients to understand their unique needs and create tailored solutions.',
+                                image: '/images/about us1.jpg'
+                            },
+                            {
+                                title: 'Solutions',
+                                desc: 'We deliver innovative, end-to-end solutions that empower businesses to overcome complex challenges and drive sustainable growth through cutting-edge technology.',
+                                image: '/images/about us 3.png'
+                            },
+                        ].map((val, i) => (
+                            <div
+                                key={val.title}
+                                className="value-card-pill"
+                                data-aos="fade-up"
+                                data-aos-delay={i * 150}
+                            >
+                                <div className="value-card-image-wrapper">
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img src={val.image} alt={val.title} />
+                                </div>
+                                <div className="value-card-content">
+                                    <h3 className="value-card-title">{val.title}</h3>
+                                    <p className="value-card-description">{val.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA */}
+            {/* <section className="py-24">
+                <div className="container">
+                    <div className="bg-primary rounded-22 p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl" data-aos="zoom-in">
+                        <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                        <div className="relative z-10 space-y-8">
+                            <h2 className="text-white font-bold max-w-2xl mx-auto leading-tight">
+                                Let's Build Something Great Together
+                            </h2>
+                            <p className="text-white/80 text-xl max-w-xl mx-auto">
+                                Partner with Nkqubela Technologies for cutting-edge ICT solutions.
+                            </p>
+                            <Link
+                                href="/contact"
+                                className="bg-white text-primary px-10 py-4 font-bold rounded-lg hover:bg-IcyBreeze transition-colors shadow-xl inline-block"
+                            >
+                                Get In Touch
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section> */}
+        </main>
     );
 }

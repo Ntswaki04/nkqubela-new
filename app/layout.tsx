@@ -1,8 +1,15 @@
 import type { Metadata } from 'next';
+import { DM_Sans } from 'next/font/google';
 import Script from 'next/script';
 import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 import './globals.css';
+
+const dmSans = DM_Sans({
+    subsets: ['latin'],
+    variable: '--font-dm-sans',
+    display: 'swap',
+});
 
 export const metadata: Metadata = {
     title: 'Nkqubela Technologies',
@@ -22,7 +29,7 @@ export default function RootLayout({
                     strategy="beforeInteractive"
                 />
             </head>
-            <body className="dark:bg-darkmode">
+            <body className={`${dmSans.variable} font-sans dark:bg-darkmode`}>
                 <Header />
                 <main className="min-h-screen pt-32">{children}</main>
                 <Footer />

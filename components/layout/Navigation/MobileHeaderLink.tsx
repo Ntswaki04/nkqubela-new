@@ -1,6 +1,7 @@
+"use client"
 import { useState } from 'react';
 import Link from 'next/link';
-import { HeaderItem } from '../../../../types/menu';
+import { HeaderItem } from '@/types/menu';
 import { usePathname, useRouter } from 'next/navigation';
 
 const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
@@ -21,19 +22,19 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
   return (
     <div className="relative w-full">
       <button
-        onClick={item.submenu ? handleToggle : handleNavigate}
+        onClick={item.children ? handleToggle : handleNavigate}
         className={`flex items-center justify-between w-full py-2 text-black dark:text-white focus:outline-none ${path == item.href ? '!text-primary' : null} ${path.startsWith(`/${item.label.toLowerCase()}`) ? '!text-primary' : null}`}
       >
         {item.label}
-        {item.submenu && (
+        {item.children && (
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
             <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m7 10l5 5l5-5" />
           </svg>
         )}
       </button>
-      {submenuOpen && item.submenu && (
+      {submenuOpen && item.children && (
         <div className="bg-white p-2 w-full">
-          {item.submenu.map((subItem, index) => (
+          {item.children.map((subItem: HeaderItem, index: number) => (
             <Link key={index} href={subItem.href} className="block py-2 text-gray-500 hover:bg-gray-200">
               {subItem.label}
             </Link>
