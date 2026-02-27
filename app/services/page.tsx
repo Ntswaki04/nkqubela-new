@@ -63,17 +63,28 @@ const pillars = [
     },
 ];
 
-// ── PILLAR CARD with scroll-reveal via IntersectionObserver ──
-function PillarCard({ pillar, index }: { pillar: typeof pillars[0]; index: number }) {
+// ── PILLAR ROW — QuantumAI horizontal list style ──
+function PillarCard({
+    pillar,
+    index,
+    isDark,
+}: {
+    pillar: typeof pillars[0];
+    index: number;
+    isDark: boolean;
+}) {
     const ref = useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
+    const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+
+    const hoverColour = isDark ? '#ffffff' : '#072B61';
 
     useEffect(() => {
         const el = ref.current;
         if (!el) return;
         const observer = new IntersectionObserver(
             ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-            { threshold: 0.25, rootMargin: '0px 0px -60px 0px' }
+            { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
         );
         observer.observe(el);
         return () => observer.disconnect();
@@ -84,41 +95,83 @@ function PillarCard({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
             ref={ref}
             style={{
                 opacity: visible ? 1 : 0,
-                transform: visible ? 'translateY(0)' : 'translateY(44px)',
-                transition: `opacity 0.65s cubic-bezier(0.23,1,0.32,1) ${index * 0.06}s, transform 0.65s cubic-bezier(0.23,1,0.32,1) ${index * 0.06}s`,
+                transform: visible ? 'translateY(0)' : 'translateY(40px)',
+                transition: `opacity 0.65s cubic-bezier(0.23,1,0.32,1) ${index * 0.07}s, transform 0.65s cubic-bezier(0.23,1,0.32,1) ${index * 0.07}s`,
             }}
-            className="relative pl-10 border-l-2 border-gray-100 dark:border-dark_border hover:border-primary transition-colors duration-500 group"
         >
-            {/* pillar label + title */}
-            <div className="mb-10">
-                <div className="flex items-center gap-3 mb-3">
-                    <span className="text-primary font-bold tracking-[0.2em] text-xs uppercase opacity-80">
-                        Pillar {index + 1}
-                    </span>
-                    <div className="w-8 h-px bg-primary/30" />
-                    <span className="text-gray-400 font-bold text-xs uppercase tracking-widest">
-                        {pillar.id.replace(/-/g, ' ')}
-                    </span>
-                </div>
-                <h3 className="text-4xl md:text-5xl font-bold dark:text-white uppercase tracking-tighter leading-none">
-                    {pillar.title}
-                </h3>
+            {/* Pillar heading row */}
+            <div className="flex items-center gap-3 py-5 border-t border-gray-200 dark:border-gray-700">
+                <div className="w-1.5 h-6 rounded-full flex-shrink-0" style={{ backgroundColor: '#072B61' }} />
+                {/*<span className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mr-2">*/}
+                {/*    Pillar {index + 1}*/}
+                {/*</span>*/}
+                <h3 className="text-xl font-bold dark:text-white">{pillar.title}</h3>
             </div>
 
-            {/* service items */}
-            <div className="flex flex-col gap-10">
-                {pillar.items.map((item, idx) => (
-                    <div key={idx} className="flex gap-6 items-start group/item">
-                        <div className="w-14 h-14 flex-shrink-0 rounded-2xl bg-gray-50 dark:bg-darklight border border-gray-100 dark:border-dark_border flex items-center justify-center text-primary group-hover/item:bg-primary group-hover/item:text-white transition-all duration-300">
+            {/* Service item rows */}
+            {pillar.items.map((item, idx) => (
+                <div
+                    key={idx}
+                    className="flex items-stretch border-t border-gray-200 dark:border-gray-700 transition-colors duration-200 cursor-default"
+                    style={{
+                        backgroundColor: hoveredItem === idx
+                            ? (isDark ? 'rgba(255,255,255,0.03)' : '#f9fafb')
+                            : 'transparent'
+                    }}
+                    onMouseEnter={() => setHoveredItem(idx)}
+                    onMouseLeave={() => setHoveredItem(null)}
+                >
+                    {/* Icon panel (left) */}
+                    <div className="hidden sm:flex w-36 lg:w-44 flex-shrink-0 items-center justify-center border-r border-gray-200 dark:border-gray-700 py-8 px-4">
+                        <div
+                            className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300"
+                            style={{
+                                backgroundColor: hoveredItem === idx ? '#072B61' : (isDark ? 'rgba(255,255,255,0.06)' : '#f3f4f6'),
+                                color: hoveredItem === idx ? '#ffffff' : (isDark ? '#9ca3af' : '#6b7280'),
+                                transform: hoveredItem === idx ? 'scale(1.08)' : 'scale(1)',
+                            }}
+                        >
                             <Icon icon={item.icon} className="text-2xl" />
                         </div>
-                        <div>
-                            <h4 className="text-xl font-bold dark:text-white mb-2 tracking-tight">{item.title}</h4>
-                            <p className="text-SlateBlueText dark:text-gray-400 leading-relaxed text-base font-medium">{item.desc}</p>
+                    </div>
+
+                    {/* Content (right) */}
+                    <div className="flex-1 flex items-center justify-between py-8 px-6 md:pl-8 gap-4">
+                        <div className="space-y-1.5">
+                            {/* mobile icon label */}
+                            <div className="sm:hidden flex items-center gap-2 mb-2">
+                                <Icon
+                                    icon={item.icon}
+                                    className="text-xl"
+                                    style={{ color: hoveredItem === idx ? hoverColour : '#9ca3af' }}
+                                />
+                            </div>
+                            <h4
+                                className="text-lg font-bold leading-tight transition-colors duration-200 dark:text-white"
+                                style={{ color: hoveredItem === idx ? hoverColour : undefined }}
+                            >
+                                {item.title}
+                            </h4>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed max-w-sm">
+                                {item.desc}
+                            </p>
+                        </div>
+
+                        {/* Arrow button */}
+                        <div
+                            className="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300"
+                            style={{
+                                backgroundColor: hoveredItem === idx ? '#072B61' : 'transparent',
+                                color: hoveredItem === idx ? '#ffffff' : '#9ca3af',
+                                transform: hoveredItem === idx ? 'scale(1.12)' : 'scale(1)',
+                                border: hoveredItem === idx ? 'none' : `1.5px solid ${isDark ? '#374151' : '#d1d5db'}`,
+                            }}
+                        >
+                            <Icon icon="ic:round-arrow-forward" className="text-base" />
                         </div>
                     </div>
-                ))}
-            </div>
+                </div>
+            ))}
         </div>
     );
 }
@@ -209,8 +262,15 @@ function StickyLeft() {
 }
 
 export default function Services() {
+    const [isDark, setIsDark] = useState(false);
+
     useEffect(() => {
         AOS.init({ duration: 1000, once: true, offset: 50 });
+        const check = () => setIsDark(document.documentElement.classList.contains('dark'));
+        check();
+        const observer = new MutationObserver(check);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        return () => observer.disconnect();
     }, []);
 
     return (
@@ -279,7 +339,7 @@ export default function Services() {
                     {/* Scrolling right feed */}
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 64 }}>
                         {pillars.map((pillar, i) => (
-                            <PillarCard key={pillar.id} pillar={pillar} index={i} />
+                            <PillarCard key={pillar.id} pillar={pillar} index={i} isDark={isDark} />
                         ))}
                     </div>
                 </div>
