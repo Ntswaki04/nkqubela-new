@@ -2,15 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\careers",
-    "\\app\\contact",
+    "\\app\\about",
     "\\app\\documentation",
     "\\app\\services",
     "\\app\\stats",
     "\\app\\team",
-    "\\public\\images",
-    "\\public\\images\\hero"
+    "\\components",
+    "\\components\\sections",
+    "\\components\\sections\\Home"
   ],
-  "SelectedNode": "\\app",
   "PreviewInSolutionExplorer": true
 }

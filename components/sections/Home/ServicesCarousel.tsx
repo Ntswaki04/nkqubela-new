@@ -8,8 +8,7 @@ import Image from "next/image";
 interface Service {
     id: number;
     text: string;
-    author: string;
-    role: string;
+    title: string;
     image: string;
 }
 
@@ -25,27 +24,24 @@ export default function ServicesCarousel({
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-    // Default services with your actual image paths
+    // Default services with your actual image paths and new content
     const defaultServices: Service[] = [
         {
             id: 1,
-            text: "The atmosphere was always relaxed, creative, and full of trust — you can just tell how passionate he is about photography. The resulting pictures are not only beautiful, but also convey emotion, personality, and genuine moments.",
-            author: "Darleen Muffler",
-            role: "MODEL",
+            title: "Software Solutions",
+            text: "We deliver cutting-edge software development, management information security, and business analyst services. Our DevOps solutions and systems integration expertise ensure seamless digital transformation, enabling your business to operate with agility, security, and efficiency in today's competitive landscape.",
             image: "/images/testimonials/building-globe.png",
         },
         {
             id: 2,
-            text: "Absolutely stunning work! The attention to detail was incredible. The photographer captured the essence of our brand perfectly and made the entire process seamless from start to finish.",
-            author: "Janine Vetsch",
-            role: "CREATIVE DIRECTOR",
+            title: "Server And Desktop Management",
+            text: "Comprehensive management of your IT infrastructure including operating system deployment, software deployment, remote control, patch deployment, and software on demand. Our integrated incident manager (Help Desk) ensures rapid response and resolution, keeping your business running smoothly 24/7.",
             image: "/images/testimonials/computer-lab.png",
         },
         {
             id: 3,
-            text: "Working with this team was a pleasure from start to finish. They understood our vision and delivered beyond expectations. The final images exceeded everything we hoped for.",
-            author: "Anthea and Sakis",
-            role: "HAPPY COUPLE",
+            title: "ICT Resourcing",
+            text: "Strategic ICT resourcing solutions tailored to your business needs. We provide expert ICT consultants, temporary resources for project-based requirements, and permanent recruitment services. Build your technology team with qualified professionals who drive innovation and business growth.",
             image: "/images/testimonials/computer.png",
         },
     ];
@@ -184,18 +180,33 @@ export default function ServicesCarousel({
         handleNavigation(newIndex);
     }, [currentIndex, services.length, handleNavigation]);
 
-    // Render pattern box
-    const PatternBox = ({ className = "" }: { className?: string }) => (
-        <div
-            className={`relative bg-gray-100 dark:bg-gray-800/50 w-full h-40 lg:h-44 border border-gray-200/70 dark:border-gray-800 rounded-lg lg:rounded-xl overflow-hidden ${className}`}
-        >
-            <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-gray-400 dark:text-gray-500 text-sm">
-                    Pattern
-                </span>
+    // Render pattern box with diagonal stripes only
+    const PatternBox = ({ className = "" }: { className?: string }) => {
+        return (
+            <div
+                className={`relative bg-gray-100 dark:bg-gray-800/50 w-full h-40 lg:h-44 border border-gray-200/70 dark:border-gray-800 rounded-lg lg:rounded-xl overflow-hidden ${className}`}
+            >
+                {/* Diagonal stripes pattern only */}
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: `repeating-linear-gradient(
+                            45deg,
+                            rgba(156, 163, 175, 0.2) 0px,
+                            rgba(156, 163, 175, 0.2) 8px,
+                            transparent 8px,
+                            transparent 16px
+                        )`
+                    }}
+                />
+
+                {/* Subtle gradient overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/20 dark:to-gray-700/20" />
+
+                {/* No text label inside */}
             </div>
-        </div>
-    );
+        );
+    };
 
     // Render image box
     const ImageBox = ({
@@ -210,14 +221,13 @@ export default function ServicesCarousel({
         >
             <Image
                 src={service.image}
-                alt={service.author}
+                alt={service.title}
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
-                <p className="text-white text-sm font-semibold">{service.author}</p>
-                <p className="text-white/80 text-xs">{service.role}</p>
+                <p className="text-white text-sm font-semibold">{service.title}</p>
             </div>
         </div>
     );
@@ -231,6 +241,16 @@ export default function ServicesCarousel({
             id="services"
         >
             <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
+                {/* Section Title and Subtext */}
+                <div className="text-center mb-12 lg:mb-16">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                        Digital Excellence, <span className="text-primary dark:text-primary-light">Exceptional Service</span>
+                    </h2>
+                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        Our enterprise software solutions are designed to streamline your business processes, improve productivity, and drive growth.
+                    </p>
+                </div>
+
                 <div className="relative">
                     {/* Main Content Grid - Text on RIGHT side */}
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
@@ -298,20 +318,15 @@ export default function ServicesCarousel({
                                             key={service.id}
                                             className="w-full flex-shrink-0 p-4 lg:p-6 flex flex-col justify-center h-full"
                                         >
-                                            {/* Service Text */}
-                                            <blockquote className="text-lg lg:text-xl leading-relaxed italic text-gray-800 dark:text-gray-200 mb-6 lg:mb-8">
-                                                "{service.text}"
-                                            </blockquote>
+                                            {/* Service Title */}
+                                            <h3 className="text-2xl lg:text-3xl font-bold text-primary dark:text-primary-light mb-4">
+                                                {service.title}
+                                            </h3>
 
-                                            {/* Author Info */}
-                                            <div className="mt-auto">
-                                                <p className="font-bold text-xl lg:text-2xl text-SlateBlueText dark:text-white">
-                                                    {service.author}
-                                                </p>
-                                                <p className="text-base text-gray-600 dark:text-gray-400 uppercase tracking-widest mt-1">
-                                                    {service.role}
-                                                </p>
-                                            </div>
+                                            {/* Service Text */}
+                                            <blockquote className="text-lg lg:text-xl leading-relaxed text-gray-800 dark:text-gray-200">
+                                                {service.text}
+                                            </blockquote>
                                         </div>
                                     ))}
                                 </div>
@@ -331,7 +346,7 @@ export default function ServicesCarousel({
                                         ? "bg-primary dark:bg-primary-light scale-110"
                                         : "bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600"
                                         }`}
-                                    aria-label={`View service from ${services[index].author}`}
+                                    aria-label={`View ${services[index].title}`}
                                     disabled={isAnimating}
                                 />
                             ))}

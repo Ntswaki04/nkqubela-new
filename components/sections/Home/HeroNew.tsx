@@ -2,7 +2,7 @@
 
 const HeroNew = () => {
     return (
-        <header className="bg-whitesmoke w-full min-h-[100px] h-[700px] flex justify-center items-center pt-5">
+        <header className="bg-whitesmoke dark:bg-darkmode w-full min-h-[100px] h-[700px] flex justify-center items-center pt-5 transition-colors duration-300">
             <div className="hero w-full flex justify-center items-center">
                 <div className="hero-background relative w-[1230px] h-[650px]">
                     <div className="hero-overlay w-full h-full flex flex-row gap-0 relative">
@@ -16,7 +16,7 @@ const HeroNew = () => {
 
                             {/* White Space Container */}
                             <div className="white-space absolute top-full left-0 w-full h-[100px] bg-transparent flex justify-center items-center z-10">
-                                <button className="floating-btn absolute w-full max-w-[370px] min-w-[160px] py-7 px-[30px] bg-white text-black font-semibold border-none rounded-[40px] cursor-pointer z-20 shadow-lg transition-all duration-600 hover:shadow-xl hover:bg-[#002d5e] hover:text-white"
+                                <button className="floating-btn absolute w-full max-w-[370px] min-w-[160px] py-7 px-[30px] bg-white dark:bg-darkmode-light text-black dark:text-black font-semibold border-none rounded-[40px] cursor-pointer z-20 shadow-lg transition-all duration-600 hover:shadow-xl hover:bg-[#002d5e] dark:hover:bg-primary-dark hover:text-white dark:hover:text-white"
                                     style={{
                                         top: '55%',
                                         left: '47%',

@@ -6,7 +6,7 @@ import type SwiperType from 'swiper';
 import ServicesCarousel from '@/components/sections/Home/ServicesCarousel';
 import LeadershipTeam from '@/components/sections/Home/LeadershipTeam';
 import CompanyHighlights from '@/components/sections/Home/CompanyHighlights';
-import Testimonials from '@/components/sections/Home/Testimonials';
+//import Testimonials from '@/components/sections/Home/Testimonials';
 import FinalCTA from '@/components/sections/Home/FinalCTA';
 import VideoModal from '@/components/VideoModals/VideoModal';
 import HeroNew from '@/components/sections/Home/HeroNew';
@@ -64,7 +64,7 @@ export default function Home() {
         );
     }
 
-    // app/page.tsx (just the return section)
+    // app/page.tsx 
     return (
         <>
             <main>
@@ -87,7 +87,7 @@ export default function Home() {
                 />
 
                 {/* Testimonials */}
-                <Testimonials swiperInstance={swiperInstances} />
+                {/*<Testimonials swiperInstance={swiperInstances} />*/}
 
                 {/* Final CTA */}
                 <FinalCTA />
