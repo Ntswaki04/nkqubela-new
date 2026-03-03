@@ -1,37 +1,37 @@
 ﻿// app/about/page.tsx
-"use client";
+//"use client";
 
-import { useEffect } from 'react';
-import Link from 'next/link';
-import { Icon } from '@iconify/react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+//import { useEffect } from 'react';
+//import Link from 'next/link';
+//import { Icon } from '@iconify/react';
+//import AOS from 'aos';
+//import 'aos/dist/aos.css';
 
-export default function About() {
-    useEffect(() => {
-        AOS.init({ duration: 1000, once: true, offset: 50 });
-    }, []);
+//export default function About() {
+//    useEffect(() => {
+//        AOS.init({ duration: 1000, once: true, offset: 50 });
+//    }, []);
 
-    return (
-        <main>
-            {/* Hero Section */}
-            <section className="video-hero mt-24">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src="/images/hero bg all.png"
-                    alt="Our Story"
-                    className="video-hero-bg"
-                />
-                <div className="video-hero-overlay"></div>
-                <div className="video-hero-content text-center px-4 max-w-4xl">
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-6" data-aos="fade-up">
-                        OUR STORY
-                    </h1>
-                    <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="100">
-                        Over 20 years of delivering excellence in systems integration and ICT solutions.
-                    </p>
-                </div>
-            </section>
+//    return (
+//        <main>
+//            {/* Hero Section */}
+//            <section className="video-hero mt-24">
+//                {/* eslint-disable-next-line @next/next/no-img-element */}
+//                <img
+//                    src="/images/hero bg all.png"
+//                    alt="Our Story"
+//                    className="video-hero-bg"
+//                />
+//                <div className="video-hero-overlay"></div>
+//                <div className="video-hero-content text-center px-4 max-w-4xl">
+//                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-6" data-aos="fade-up">
+//                        OUR STORY
+//                    </h1>
+//                    <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="100">
+//                        Over 20 years of delivering excellence in systems integration and ICT solutions.
+//                    </p>
+//                </div>
+//            </section>
 
             {/* Our Story / Get to Know Us */}
             {/*<section className="bg-white dark:bg-darkmode py-32 overflow-hidden">*/}
