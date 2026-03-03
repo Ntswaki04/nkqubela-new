@@ -31,7 +31,7 @@ export default function RootLayout({
             </head>
             <body className={`${dmSans.variable} font-sans dark:bg-darkmode`}>
                 <Header />
-                <main className="min-h-screen pt-32">{children}</main>
+                <main className="min-h-screen">{children}</main>
                 <Footer />
             </body>
         </html>

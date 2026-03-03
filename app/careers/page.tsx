@@ -75,27 +75,27 @@ export default function Careers() {
             <section className="py-24 bg-white dark:bg-darkmode">
                 <div className="container overflow-hidden">
                     {/* Why Join Us */}
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                        {[
-                            { title: 'Innovation Culture', desc: 'Work on cutting-edge projects that push the boundaries of technology.' },
-                            { title: 'Growth Opportunities', desc: 'Continuous learning and career advancement within a dynamic environment.' },
-                            { title: 'Inclusive Workplace', desc: 'A diverse and supportive team that values every perspective.' },
-                        ].map((item, i) => (
-                            <div
-                                key={item.title}
-                                className="bg-white dark:bg-darklight p-8 rounded-22 shadow-lg border border-gray-100 dark:border-transparent hover:-translate-y-2 transition-all duration-300 space-y-6 flex flex-col items-center text-center"
-                                data-aos="fade-up"
-                                data-aos-delay={i * 100}
-                            >
-                                <div className="inline-block px-6 py-2 bg-primary/10 dark:bg-primary/20 rounded-full">
-                                    <h4 className="text-sm md:text-base font-bold text-primary uppercase tracking-wider">
-                                        {item.title}
-                                    </h4>
-                                </div>
-                                <p className="text-SlateBlueText dark:text-darktext text-lg leading-relaxed">{item.desc}</p>
-                            </div>
-                        ))}
-                    </div>
+                    {/*<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">*/}
+                    {/*    {[*/}
+                    {/*        { title: 'Innovation Culture', desc: 'Work on cutting-edge projects that push the boundaries of technology.' },*/}
+                    {/*        { title: 'Growth Opportunities', desc: 'Continuous learning and career advancement within a dynamic environment.' },*/}
+                    {/*        { title: 'Inclusive Workplace', desc: 'A diverse and supportive team that values every perspective.' },*/}
+                    {/*    ].map((item, i) => (*/}
+                    {/*        <div*/}
+                    {/*            key={item.title}*/}
+                    {/*            className="bg-white dark:bg-darklight p-8 rounded-22 shadow-lg border border-gray-100 dark:border-transparent hover:-translate-y-2 transition-all duration-300 space-y-6 flex flex-col items-center text-center"*/}
+                    {/*            data-aos="fade-up"*/}
+                    {/*            data-aos-delay={i * 100}*/}
+                    {/*        >*/}
+                    {/*            <div className="inline-block px-6 py-2 bg-primary/10 dark:bg-primary/20 rounded-full">*/}
+                    {/*                <h4 className="text-sm md:text-base font-bold text-primary uppercase tracking-wider">*/}
+                    {/*                    {item.title}*/}
+                    {/*                </h4>*/}
+                    {/*            </div>*/}
+                    {/*            <p className="text-SlateBlueText dark:text-darktext text-lg leading-relaxed">{item.desc}</p>*/}
+                    {/*        </div>*/}
+                    {/*    ))}*/}
+                    {/*</div>*/}
 
                     {/* Current Openings */}
                     {!selectedJob ? (

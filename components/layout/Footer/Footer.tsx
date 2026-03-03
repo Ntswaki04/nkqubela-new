@@ -67,19 +67,19 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div className="footer-v-divider hidden lg:block"></div>
+                    {/*<div className="footer-v-divider hidden lg:block"></div>*/}
 
                     {/* Search Column */}
-                    <div className="footer-search-container">
-                        <div className="footer-search-box">
-                            <input
-                                type="text"
-                                placeholder="Search.."
-                                className="footer-search-input"
-                            />
-                            <Icon icon="ic:round-search" className="footer-search-icon" />
-                        </div>
-                    </div>
+                    {/*<div className="footer-search-container">*/}
+                    {/*    <div className="footer-search-box">*/}
+                    {/*        <input*/}
+                    {/*            type="text"*/}
+                    {/*            placeholder="Search.."*/}
+                    {/*            className="footer-search-input"*/}
+                    {/*        />*/}
+                    {/*        <Icon icon="ic:round-search" className="footer-search-icon" />*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
 
                 {/* Copyright */}

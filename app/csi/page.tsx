@@ -108,7 +108,7 @@ export default function CSI() {
                     className="video-hero-bg"
                 />
                 <div className="video-hero-overlay"></div>
-                <div className="video-hero-content text-center px-4 max-w-4xl">
+                <div className="video-hero-content text-center px-4 max-w-5xl">
                     <h1 className="text-5xl md:text-8xl font-bold text-white mb-4 uppercase tracking-[0.05em]" data-aos="fade-up">
                         CSI Programmes
                     </h1>

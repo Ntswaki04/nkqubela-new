@@ -116,7 +116,7 @@ export default function Team() {
                             <span className="pillar-badge bg-primary/10 text-primary px-4 py-2 font-bold rounded-full">Executive Team</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold dark:text-white max-w-4xl mx-auto leading-tight mt-6">
-                            Visionary leaders driving Nkqubela Technologies towards a brighter, more connected future.
+                            VISIONARY LEADERS.
                         </h2>
                     </div>
 

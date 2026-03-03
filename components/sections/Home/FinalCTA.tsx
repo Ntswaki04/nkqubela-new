@@ -5,7 +5,7 @@ export default function FinalCTA() {
         <section className="py-24">
             <div className="container">
                 <div
-                    className="bg-primary rounded-22 p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-primary/30"
+                    className="bg-primary rounded-22 p-12 md:p-24 text-center text-white relative overflow-hidden"
                     data-aos="zoom-in"
                 >
                     <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
