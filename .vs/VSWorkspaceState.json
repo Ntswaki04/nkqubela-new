@@ -2,13 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\about",
-    "\\app\\documentation",
-    "\\app\\services",
-    "\\app\\stats",
-    "\\app\\team",
+    "\\app\\careers",
     "\\components",
+    "\\components\\layout",
+    "\\components\\layout\\Footer",
+    "\\components\\layout\\Header",
     "\\components\\sections",
+    "\\components\\sections\\careers",
     "\\components\\sections\\Home"
   ],
   "PreviewInSolutionExplorer": true

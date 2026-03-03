@@ -4,7 +4,6 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
-// Define TypeScript interfaces
 interface Service {
     id: number;
     text: string;
@@ -24,7 +23,6 @@ export default function ServicesCarousel({
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-    // Default services with your actual image paths and new content
     const defaultServices: Service[] = [
         {
             id: 1,
@@ -48,7 +46,7 @@ export default function ServicesCarousel({
 
     const services = propServices || defaultServices;
 
-    // Create extended arrays to ensure we always have visible content
+    
     const createExtendedColumn = (basePattern: string[], slideIndex: number) => {
         // Create an array with 9 items (3 visible + 3 above + 3 below) for continuous scrolling
         const extended = [];
@@ -65,7 +63,7 @@ export default function ServicesCarousel({
         return extended;
     };
 
-    // Define the exact 3-item base pattern for each slide
+    // 3-item base pattern for each slide
     const getBaseSlidePattern = (slideIndex: number) => {
         switch (slideIndex) {
             case 0: // SLIDE 1 - Image in middle of right column
@@ -91,7 +89,7 @@ export default function ServicesCarousel({
         }
     };
 
-    // Get extended patterns with extra items for scrolling
+    // Extended patterns with extra items for scrolling
     const getSlidePattern = (slideIndex: number) => {
         const base = getBaseSlidePattern(slideIndex);
         return {
@@ -100,9 +98,9 @@ export default function ServicesCarousel({
         };
     };
 
-    // Calculate transforms - we need to show the middle 3 items (indexes 3, 4, 5)
+    // Calculate transforms - show the middle 3 items (indexes 3, 4, 5)
     const getLeftColumnTransform = (): string => {
-        const itemHeight = 216; // 200px + 16px gap
+        const itemHeight = 216; 
         // Start position shows items 3, 4, 5 (middle of 9 items)
         const baseOffset = itemHeight * 3;
 
@@ -180,7 +178,6 @@ export default function ServicesCarousel({
         handleNavigation(newIndex);
     }, [currentIndex, services.length, handleNavigation]);
 
-    // Render pattern box with diagonal stripes only
     const PatternBox = ({ className = "" }: { className?: string }) => {
         return (
             <div
@@ -208,7 +205,6 @@ export default function ServicesCarousel({
         );
     };
 
-    // Render image box
     const ImageBox = ({
         service,
         className = "",
@@ -232,7 +228,6 @@ export default function ServicesCarousel({
         </div>
     );
 
-    // Get current slide pattern (extended version)
     const currentPattern = getSlidePattern(currentIndex);
 
     return (
@@ -256,7 +251,7 @@ export default function ServicesCarousel({
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
                         {/* LEFT COLUMN: Image Gallery (7 columns on desktop) */}
                         <div className="lg:col-span-7 order-2 lg:order-1">
-                            {/* Dual Column Gallery Container - Increased height for scrolling */}
+                            {/* Dual Column Gallery Container */}
                             <div className="flex w-full gap-3 lg:gap-4 justify-center overflow-hidden h-[280px] lg:h-[500px]">
                                 {/* LEFT GALLERY COLUMN - 9 items total */}
                                 <div className="relative w-full max-w-[150px] lg:max-w-[140px]">
