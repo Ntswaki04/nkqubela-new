@@ -29,3 +29,5 @@ jobs.forEach((job) => {
         groupedJobs.push({ department: job.department, jobs: [job] });
     }
 });
+
+//suppose to be Jobdata.ts
