@@ -2,10 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\careers",
+    "\\app\\homePage",
     "\\components",
     "\\components\\layout",
-    "\\components\\layout\\Footer",
+    "\\components\\layout\\Banner",
     "\\components\\layout\\Header",
     "\\components\\sections",
     "\\components\\sections\\careers",
