@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
-import { contactDetails } from './contactData';
+import { contactDetails, ContactDetail } from './ContactData';
 
 interface ContactInfoTableProps {
     isDark: boolean;
@@ -20,7 +20,7 @@ export default function ContactInfoTable({ isDark }: ContactInfoTableProps) {
             </div>
 
             <div className="border-t border-gray-200 dark:border-gray-700">
-                {contactDetails.map((item) => (
+                {contactDetails.map((item: ContactDetail) => (
                     <div
                         key={item.label}
                         className="flex items-stretch border-b border-gray-200 dark:border-gray-700 transition-colors duration-200"
