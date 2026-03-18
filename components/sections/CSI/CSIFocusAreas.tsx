@@ -1,7 +1,7 @@
 ﻿// sections/CSI/CSIFocusAreas.tsx
 "use client";
 
-import { focusAreas } from './csiData';
+import { focusAreas } from './CSIData';
 
 export default function CSIFocusAreas() {
     return (
