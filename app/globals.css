@@ -28,6 +28,8 @@ html {
 
 body {
     font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--slate-bg);
@@ -53,30 +55,39 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-    font-weight: 800;
-    line-height: 1.08;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
 }
 
 h1 {
     font-size: 2.5rem;
-    line-height: 1.2;
-    font-weight: 700;
 }
 
 h2 {
-    font-size: 1.75rem;
-    line-height: 1.2;
-    font-weight: 700;
+    font-size: 2rem;
 }
 
 h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
     font-size: 1.5rem;
-    font-weight: 700;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1.125rem;
 }
 
 @media (min-width: 768px) {
     h1 {
-        font-size: 3.3125rem;
+        font-size: 3.25rem;
     }
 
     h2 {
@@ -84,8 +95,31 @@ h3 {
     }
 
     h3 {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
+
+    h4 {
+        font-size: 1.75rem;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+    }
+}
+
+p,
+li,
+a,
+button,
+input,
+textarea,
+select,
+label {
+    font-size: 1rem;
 }
 
 /* Container */
@@ -383,6 +417,7 @@ section {
 
 /* Navigation */
 .nav-link {
+    font-size: 1.125rem;
     font-weight: 500;
     white-space: nowrap;
     padding: 0.5rem 0;
@@ -519,8 +554,8 @@ section {
 .mobile-nav-link {
     width: 100%;
     padding: 1rem 0;
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: 1.25rem;
+    font-weight: 600;
     border-bottom: 1px solid #f3f4f6;
     transition: color 0.3s;
 }
