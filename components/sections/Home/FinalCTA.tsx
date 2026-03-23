@@ -2,8 +2,10 @@
 
 export default function FinalCTA() {
   return (
-    <section className="py-14 lg:py-16">
-      <div className="container">
+    <section className="bg-white dark:bg-darkmode py-14 lg:py-16 relative">
+      {/* Blending gradient from highlights section */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-IcyBreeze dark:from-darklight to-transparent dark:to-transparent pointer-events-none"></div>
+      <div className="container relative z-10 pt-8 lg:pt-10">
         <div
           className="bg-primary rounded-22 p-8 sm:p-10 md:p-16 lg:p-24 text-center text-white relative overflow-hidden"
           data-aos="zoom-in"

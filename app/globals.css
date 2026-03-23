@@ -152,6 +152,11 @@ section {
     }
 }
 
+/* Hero section - override global padding to prevent nav bleed */
+header.hero-new-header {
+    padding-top: 0 !important;
+}
+
 /* Team image circle */
 .team-image {
     width: 18rem;
@@ -449,7 +454,7 @@ section {
 }
 
 .dark .header-sticky {
-    background-color: rgba(1, 17, 32, 0.9);
+    background-color: var(--darkmode) !important;
     border-bottom: 1px solid var(--dark-border);
 }
 

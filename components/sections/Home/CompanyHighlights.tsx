@@ -42,8 +42,10 @@ export default function CompanyHighlights({
   }, [swiperInstance]);
 
   return (
-    <section className="bg-IcyBreeze dark:bg-darklight py-12 lg:py-20 overflow-hidden">
-      <div className="container">
+    <section className="bg-IcyBreeze dark:bg-darklight py-12 lg:py-20 overflow-hidden relative">
+      {/* Blending gradient from leadership section */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white dark:from-darkmode to-transparent dark:to-transparent pointer-events-none"></div>
+      <div className="container relative z-10 pt-8 lg:pt-10">
         <div className="grid lg:grid-cols-2 items-center gap-10 lg:gap-20">
           <div className="space-y-6 lg:space-y-8" data-aos="fade-right">
             <h2 className="font-bold dark:text-white leading-tight">

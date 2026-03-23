@@ -18,8 +18,10 @@ const leaders = [
 
 export default function LeadershipTeam() {
   return (
-    <section className="bg-white dark:bg-darkmode py-12 lg:py-20">
-      <div className="container overflow-hidden">
+    <section className="bg-white dark:bg-darkmode py-12 lg:py-20 relative">
+      {/* Blending gradient from services section */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-IcyBreeze dark:from-darklight to-transparent dark:to-transparent pointer-events-none"></div>
+      <div className="container overflow-hidden relative z-10 pt-8 lg:pt-10">
         <div className="text-center mb-10 lg:mb-20" data-aos="fade-up">
           <h2 className="font-bold dark:text-white mb-4">
             Our Leadership Team

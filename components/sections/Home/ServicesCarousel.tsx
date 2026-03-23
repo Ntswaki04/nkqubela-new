@@ -233,10 +233,12 @@ export default function ServicesCarousel({
 
   return (
     <section
-      className="scroll-mt-24 bg-section dark:bg-darklight py-10 lg:py-14"
+      className="scroll-mt-24 bg-IcyBreeze dark:bg-darklight py-10 lg:py-14 relative"
       id="services"
     >
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6">
+      {/* Blending gradient from hero section */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white dark:from-darkmode to-transparent dark:to-transparent pointer-events-none"></div>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 pt-8 lg:pt-10 relative z-10">
         {/* Section Title and Subtext */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">

@@ -1,7 +1,7 @@
 ﻿const HeroNew = () => {
   return (
-    <header className="bg-whitesmoke dark:bg-darkmode w-full min-h-[100px] h-[520px] sm:h-[620px] lg:h-[700px] mt-24 px-4 sm:px-6 lg:px-8 flex justify-center items-center transition-colors duration-300">
-      <div className="hero w-full flex justify-center items-center">
+    <header className="hero-new-header bg-white dark:bg-darkmode w-full min-h-[100px] h-[440px] sm:h-[520px] lg:h-[600px] mt-24 px-4 sm:px-6 lg:px-8 flex justify-center items-start transition-colors duration-300">
+      <div className="hero w-full flex justify-center items-start pt-8 sm:pt-10 lg:pt-12">
         <div className="hero-background relative w-full max-w-[1230px] h-[440px] sm:h-[540px] lg:h-[650px]">
           <div className="hero-overlay w-full h-full flex flex-row gap-0 relative">
             {/* Hero 1 with white space and button */}
