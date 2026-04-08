@@ -23,10 +23,10 @@ export default function LeadershipTeam() {
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-IcyBreeze dark:from-darklight to-transparent dark:to-transparent pointer-events-none"></div>
       <div className="container overflow-hidden relative z-10 pt-8 lg:pt-10">
         <div className="text-center mb-10 lg:mb-20" data-aos="fade-up">
-          <h2 className="font-bold dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Our Leadership Team
           </h2>
-          <p className="text-SlateBlueText dark:text-darktext max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Guided by visionaries with a passion for innovation and digital
             transformation.
           </p>
@@ -58,7 +58,7 @@ export default function LeadershipTeam() {
           ))}
         </div>
         <div className="text-center mt-10 lg:mt-16" data-aos="fade-up">
-          <Button href="/team" variant="outline">
+          <Button href="/team" variant="outline" className="!rounded-full">
             View Entire Team
           </Button>
         </div>

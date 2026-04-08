@@ -48,11 +48,11 @@ export default function CompanyHighlights({
       <div className="container relative z-10 pt-8 lg:pt-10">
         <div className="grid lg:grid-cols-2 items-center gap-10 lg:gap-20">
           <div className="space-y-6 lg:space-y-8" data-aos="fade-right">
-            <h2 className="font-bold dark:text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
               Driving Digital{" "}
               <span className="text-primary text-opacity-100">Excellence</span>
             </h2>
-            <p className="text-lg text-SlateBlueText dark:text-darktext leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl">
               For over two decades, Nkqubela Technologies has been at the
               forefront of ICT innovation, delivering scalable systems and
               strategic solutions that empower South African businesses.

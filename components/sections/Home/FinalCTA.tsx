@@ -49,19 +49,19 @@ export default function FinalCTA() {
           data-aos-easing="ease-out-cubic"
         >
           <div className="absolute inset-0 bg-slate-950/82 dark:bg-slate-950/92 pointer-events-none"></div>
-          <div className="absolute inset-0 bg-IcyBreeze/15 dark:bg-IcyBreeze/8 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-blue-950/40 dark:bg-blue-950/30 pointer-events-none"></div>
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-ElectricAqua/20 rounded-full blur-3xl pointer-events-none"></div>
           <div className="relative z-10 space-y-8 pointer-events-auto">
             <h2
-              className="text-slate-900 dark:text-slate-900 font-bold max-w-2xl mx-auto leading-tight drop-shadow-lg"
-              style={{ textShadow: "0 2px 8px rgba(255,255,255,0.5)" }}
+              className="text-3xl md:text-4xl lg:text-5xl text-white font-bold max-w-3xl mx-auto leading-tight drop-shadow-lg"
+              style={{ textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}
             >
               Ready to Transform Your Business with Technology?
             </h2>
             <p
-              className="text-slate-800 dark:text-slate-900 text-xl max-w-xl mx-auto drop-shadow-md"
-              style={{ textShadow: "0 1px 6px rgba(255,255,255,0.4)" }}
+              className="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto drop-shadow-md"
+              style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
             >
               Partner with Nkqubela Technologies for cutting-edge ICT solutions
               tailored to your unique needs.
@@ -70,13 +70,13 @@ export default function FinalCTA() {
               <button
                 type="button"
                 onClick={() => setIsOpen(true)}
-                className="bg-white text-primary dark:bg-gray-900 dark:text-white px-10 py-4 font-bold rounded-lg hover:bg-IcyBreeze dark:hover:bg-gray-800 transition-colors shadow-xl"
+                className="bg-white text-primary dark:bg-gray-900 dark:text-white px-10 py-4 font-bold rounded-full hover:bg-IcyBreeze dark:hover:bg-gray-800 transition-colors shadow-xl"
               >
                 Get Started Today
               </button>
               <Link
                 href="/services"
-                className="border-2 border-slate-900/50 text-slate-900 dark:border-white/50 dark:text-slate-900 px-10 py-4 font-bold rounded-lg hover:bg-slate-900/10 dark:hover:bg-white/10 transition-colors"
+                className="border-2 border-white/70 text-white px-10 py-4 font-bold rounded-full hover:bg-white/10 transition-colors"
               >
                 Our Offerings
               </Link>

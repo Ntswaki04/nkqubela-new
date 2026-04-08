@@ -335,7 +335,7 @@ export default function ServicesCarousel({
                       <div className="mt-6">
                         <Link
                           href="/services"
-                          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold bg-transparent text-primary dark:text-primary-light border border-primary/40 dark:border-primary-light/40 hover:border-primary dark:hover:border-primary-light transition-colors duration-300"
+                          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-transparent text-primary dark:text-primary-light border-2 border-primary/40 dark:border-primary-light/40 hover:border-primary dark:hover:border-primary-light transition-colors duration-300"
                         >
                           View More
                           <span aria-hidden="true">→</span>
