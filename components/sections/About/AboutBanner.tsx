@@ -1,29 +1,29 @@
-﻿// sections/Careers/Banner.tsx
+// sections/About/AboutBanner.tsx
 "use client";
 
-export default function CareersBanner() {
+export default function AboutBanner() {
     return (
         <section className="video-hero mt-24">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
                 src="/images/hero bg all.png"
-                alt="Careers"
+                alt="Our Story"
                 className="video-hero-bg"
             />
             <div className="video-hero-overlay"></div>
             <div className="video-hero-content text-center px-4 max-w-4xl">
                 <h1
-                    className="text-5xl md:text-8xl font-bold text-white mb-4 uppercase tracking-[0.05em]"
+                    className="text-5xl md:text-7xl font-bold text-white mb-6"
                     data-aos="fade-up"
                 >
-                    CAREERS
+                    OUR STORY
                 </h1>
                 <p
-                    className="text-xl md:text-2xl text-white font-bold uppercase tracking-[0.3em] opacity-90"
+                    className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
-                    JOIN OUR TEAM
+                    Over 20 years of delivering excellence in systems integration and ICT solutions.
                 </p>
             </div>
         </section>

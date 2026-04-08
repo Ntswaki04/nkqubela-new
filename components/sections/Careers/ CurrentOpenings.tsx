@@ -32,8 +32,8 @@ export default function CurrentOpenings({ hoveredJob, isDark, onHover, onSelect 
                             <div
                                 key={job.title}
                                 className={`flex items-stretch border-b border-gray-200 dark:border-gray-700 last:border-b-0 cursor-pointer transition-colors duration-200 ${hoveredJob === job.title
-                                        ? 'bg-gray-50 dark:bg-darklight'
-                                        : 'bg-white dark:bg-transparent'
+                                    ? 'bg-gray-50 dark:bg-darklight'
+                                    : 'bg-white dark:bg-transparent'
                                     }`}
                                 onClick={() => job.hasDetail && onSelect(job)}
                                 onMouseEnter={() => onHover(job.title)}
