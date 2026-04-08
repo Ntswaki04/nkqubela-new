@@ -35,16 +35,16 @@ export default function LeadershipTeam() {
           {leaders.map((leader) => (
             <div
               key={leader.name}
-              className="group max-w-[300px] w-full"
+              className="group max-w-[320px] w-full"
               data-aos="fade-up"
               data-aos-delay={leader.delay}
             >
-              <div className="relative overflow-hidden rounded-22 shadow-lg h-[380px] mb-6">
+              <div className="relative overflow-hidden rounded-22 shadow-lg h-[410px] mb-6">
                 <Image
                   src={leader.image}
                   alt={leader.name}
-                  width={300}
-                  height={380}
+                  width={320}
+                  height={410}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>

@@ -1,4 +1,6 @@
-﻿const HeroNew = () => {
+﻿import Link from "next/link";
+
+const HeroNew = () => {
   return (
     <header className="hero-new-header bg-white dark:bg-darkmode w-full min-h-[100px] h-[440px] sm:h-[520px] lg:h-[600px] mt-24 px-4 sm:px-6 lg:px-8 flex justify-center items-start transition-colors duration-300">
       <div className="hero w-full flex justify-center items-start pt-8 sm:pt-10 lg:pt-12">
@@ -15,8 +17,9 @@
             >
               {/* White Space Container */}
               <div className="white-space absolute top-full left-0 w-full h-[90px] sm:h-[100px] bg-transparent flex justify-center items-center z-10">
-                <button
-                  className="floating-btn absolute w-[88%] sm:w-full max-w-[370px] min-w-[160px] py-3 sm:py-5 lg:py-7 px-5 sm:px-[30px] text-sm sm:text-base bg-white dark:bg-darkmode-light text-black dark:text-black font-semibold border-none rounded-[28px] sm:rounded-[40px] cursor-pointer z-20 shadow-lg transition-all duration-600 hover:shadow-xl hover:bg-[#002d5e] dark:hover:bg-primary-dark hover:text-white dark:hover:text-white"
+                <Link
+                  href="/about"
+                  className="floating-btn absolute inline-flex items-center justify-center text-center no-underline appearance-none w-[88%] sm:w-full max-w-[370px] min-w-[160px] py-3 sm:py-5 lg:py-7 px-5 sm:px-[30px] text-sm sm:text-base bg-white dark:bg-darkmode-light text-black dark:text-black font-semibold border-none rounded-[28px] sm:rounded-[40px] cursor-pointer z-20 shadow-lg transition-all duration-600 hover:shadow-xl hover:bg-[#002d5e] dark:hover:bg-primary-dark hover:text-white dark:hover:text-white"
                   style={{
                     top: "55%",
                     left: "50%",
@@ -37,7 +40,7 @@
                   }}
                 >
                   Technologies Read More
-                </button>
+                </Link>
               </div>
             </div>
 

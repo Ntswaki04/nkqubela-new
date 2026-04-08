@@ -3,6 +3,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Service {
   id: number;
@@ -330,6 +331,16 @@ export default function ServicesCarousel({
                       <blockquote className="text-lg lg:text-xl leading-relaxed text-gray-800 dark:text-gray-200">
                         {service.text}
                       </blockquote>
+
+                      <div className="mt-6">
+                        <Link
+                          href="/services"
+                          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold bg-transparent text-primary dark:text-primary-light border border-primary/40 dark:border-primary-light/40 hover:border-primary dark:hover:border-primary-light transition-colors duration-300"
+                        >
+                          View More
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                      </div>
                     </div>
                   ))}
                 </div>
