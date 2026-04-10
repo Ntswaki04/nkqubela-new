@@ -1,4 +1,4 @@
-﻿// sections/Services/ServicesCTA.tsx
+// sections/Services/ServicesCTA.tsx
 "use client";
 
 import Link from 'next/link';
@@ -17,7 +17,7 @@ export default function ServicesCTA() {
                     }}
                     data-aos="zoom-in"
                 >
-                    <div className="absolute inset-0 bg-black/50 mix-blend-multiply" />
+                    {/* Dark shade removed for clear image background */}
                     <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
                         <div className="space-y-6 max-w-2xl text-center lg:text-left">
                             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -30,7 +30,7 @@ export default function ServicesCTA() {
                         <div>
                             <Link
                                 href="/contact"
-                                className="bg-primary text-white hover:bg-white hover:text-primary transition-colors px-8 py-4 rounded-full font-bold shadow-lg block whitespace-nowrap"
+                                className="bg-[#00296D] text-white border border-[#00296D] hover:bg-white hover:text-black transition-colors px-10 py-2.5 rounded-full font-bold shadow-lg block whitespace-nowrap text-sm"
                             >
                                 Contact Us Today
                             </Link>

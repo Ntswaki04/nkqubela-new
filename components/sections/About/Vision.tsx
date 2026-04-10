@@ -7,12 +7,25 @@ export default function Vision() {
             <div className="container">
                 <div className="grid lg:grid-cols-2 items-center gap-20">
                     <div data-aos="fade-right">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                            src="/images/vision.png"
-                            alt="Our Vision"
-                            className="w-full h-auto rounded-[2rem] shadow-2xl"
-                        />
+                        <div className="group relative w-full h-auto cursor-pointer">
+                            <img
+                                src="/images/vision.png"
+                                alt="Our Vision"
+                                className="w-full h-auto rounded-[2rem] shadow-2xl opacity-0"
+                            />
+                            <div className="absolute top-0 left-0 w-1/2 h-1/2 overflow-hidden rounded-tl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg">
+                                <img src="/images/vision.png" alt="" className="absolute top-0 left-0 w-[200%] h-[200%] max-w-none object-cover" />
+                            </div>
+                            <div className="absolute top-0 right-0 w-1/2 h-1/2 overflow-hidden rounded-tr-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg">
+                                <img src="/images/vision.png" alt="" className="absolute top-0 right-0 w-[200%] h-[200%] max-w-none object-cover" />
+                            </div>
+                            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 overflow-hidden rounded-bl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:translate-y-3 z-10 shadow-lg">
+                                <img src="/images/vision.png" alt="" className="absolute bottom-0 left-0 w-[200%] h-[200%] max-w-none object-cover" />
+                            </div>
+                            <div className="absolute bottom-0 right-0 w-1/2 h-1/2 overflow-hidden rounded-br-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:translate-y-3 z-10 shadow-lg">
+                                <img src="/images/vision.png" alt="" className="absolute bottom-0 right-0 w-[200%] h-[200%] max-w-none object-cover" />
+                            </div>
+                        </div>
                     </div>
                     <div className="space-y-8" data-aos="fade-left">
                         <div className="inline-block px-4 py-1.5 border border-primary/20 rounded-full bg-primary/5">

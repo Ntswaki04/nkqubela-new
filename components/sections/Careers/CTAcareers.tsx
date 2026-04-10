@@ -23,7 +23,7 @@ export default function CTAcareers() {
                         <div>
                             <a
                                 href="mailto:Info@nkqubela.co.za"
-                                className="bg-[#052e69] text-white hover:bg-[#052e69]/90 transition-colors px-10 py-5 rounded-[1.5rem] font-bold shadow-lg block whitespace-nowrap text-lg"
+                                className="bg-[#00296D] text-white border border-[#00296D] hover:bg-white hover:text-black transition-colors px-10 py-2.5 rounded-full font-bold shadow-lg block whitespace-nowrap text-sm"
                             >
                                 Send your CV
                             </a>

@@ -1,4 +1,4 @@
-﻿// sections/Services/PillarCard.tsx
+// sections/Services/PillarCard.tsx
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
@@ -32,6 +32,7 @@ export default function PillarCard({ pillar, index, isDark }: PillarCardProps) {
     return (
         <div
             ref={ref}
+            id={pillar.id}
             style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? 'translateY(0)' : 'translateY(40px)',

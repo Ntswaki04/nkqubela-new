@@ -19,10 +19,13 @@ export default function ExecutiveTeam() {
                     <h2 className="text-4xl md:text-5xl font-bold dark:text-white max-w-4xl mx-auto leading-tight mt-6">
                         VISIONARY LEADERS.
                     </h2>
+                    <p className="text-xl md:text-2xl text-SlateBlueText dark:text-gray-400 mt-4 font-medium max-w-3xl mx-auto">
+                        Drivers of Nkqubela Technologies
+                    </p>
                 </div>
 
                 {/* Members */}
-                <div className="space-y-32">
+                <div className="border-t border-gray-200 dark:border-gray-800">
                     {executiveTeam.map((member, i) => (
                         <TeamMember
                             key={member.name}

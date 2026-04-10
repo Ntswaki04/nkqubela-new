@@ -1214,13 +1214,13 @@ footer {
 
 .footer-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
-    gap: 0;
-    max-width: 1500px;
+    gap: 2.5rem;
+    max-width: 1300px;
     margin: 0 auto;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0 2rem 4rem 2rem;
+    padding: 0 1rem 4rem 1rem;
     flex-wrap: nowrap;
 }
 
@@ -1228,7 +1228,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding-right: 1rem;
+    padding-right: 1.5rem;
     flex: 0 0 auto;
 }
 
@@ -1245,17 +1245,19 @@ footer {
 .footer-v-divider {
     width: 1px;
     min-width: 1px;
-    height: 220px;
+    height: 140px;
     background-color: rgba(255, 255, 255, 0.2);
     margin: 0 1.5rem;
     align-self: flex-start;
 }
 
+
+
 .footer-column {
-    flex: 1;
-    padding: 0 1rem;
-    min-width: 160px;
+    flex: 0 0 auto;
+    padding: 0 0.5rem;
 }
+
 
 .footer-column-title {
     font-weight: 700;
@@ -1283,6 +1285,33 @@ footer {
 .footer-link-item:hover {
     color: white;
 }
+
+.footer-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-info-icon {
+    font-size: 1.25rem;
+    color: white;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.footer-info-link {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-info-link:hover .footer-link-item {
+    color: white;
+}
+
 
 /* =====================
    SIX PILLARS DESIGN

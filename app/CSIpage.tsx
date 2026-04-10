@@ -1,4 +1,4 @@
-﻿// sections/CSI/page.tsx
+// sections/CSI/page.tsx
 "use client";
 
 import { useEffect, useState } from 'react';
@@ -30,11 +30,10 @@ export default function CSI() {
             <section className="video-hero mt-24">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/images/hero bg all.png"
+                    src="/images/banner.png"
                     alt="CSI Programmes"
                     className="video-hero-bg"
                 />
-                <div className="video-hero-overlay" />
                 <div className="video-hero-content text-center px-4 max-w-5xl">
                     <h1
                         className="text-5xl md:text-8xl font-bold text-white mb-4 uppercase tracking-[0.05em]"

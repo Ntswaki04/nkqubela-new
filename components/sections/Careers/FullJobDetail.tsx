@@ -17,10 +17,10 @@ export default function FullJobDetail({ job, onBack }: FullJobDetailProps) {
             <div className="mb-8">
                 <button
                     onClick={onBack}
-                    className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors uppercase tracking-widest"
+                    className="inline-flex items-center gap-2 border border-[#00296D] bg-white text-[#00296D] hover:bg-[#00296D] hover:text-white font-bold py-2.5 px-8 rounded-full transition-colors text-sm"
                 >
-                    <Icon icon="ic:round-arrow-back" className="text-lg group-hover:-translate-x-1 transition-transform" />
-                    Back to open roles
+                    <Icon icon="ic:round-arrow-back" className="text-base" />
+                    Back
                 </button>
             </div>
 
@@ -245,7 +245,7 @@ export default function FullJobDetail({ job, onBack }: FullJobDetailProps) {
                         <div className="flex flex-col items-center lg:items-end gap-4">
                             <a
                                 href="mailto:NokwandaB@Nkqubela.co.za"
-                                className="bg-[#07367c] text-white hover:bg-[#07367c]/90 transition-colors px-10 py-4 rounded-full font-bold shadow-lg block whitespace-nowrap text-lg md:text-xl"
+                                className="bg-[#00296D] text-white border border-[#00296D] hover:bg-white hover:text-black transition-colors px-10 py-2.5 rounded-full font-bold shadow-lg block whitespace-nowrap text-sm"
                             >
                                 Apply via Email
                             </a>

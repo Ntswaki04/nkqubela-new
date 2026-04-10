@@ -9,6 +9,7 @@ import GettoKnowUs from '@/components/sections/About/GettoKnowUs';
 import Vision from '@/components/sections/About/Vision';
 import Mission from '@/components/sections/About/Mission';
 import CoreValues from '@/components/sections/About/CoreValues';
+import InvestorCTA from '@/components/sections/About/InvestorCTA';
 
 export default function AboutPage() {
     useEffect(() => {
@@ -21,11 +22,10 @@ export default function AboutPage() {
             <section className="video-hero mt-24">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/images/hero%20bg%20all.png"
+                    src="/images/banner.png"
                     alt="Our Story"
                     className="video-hero-bg"
                 />
-                <div className="video-hero-overlay"></div>
                 <div className="video-hero-content text-center px-4 max-w-4xl">
                     <h1
                         className="text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-[0.05em]"
@@ -47,6 +47,9 @@ export default function AboutPage() {
             <Vision />
             <Mission />
             <CoreValues />
+
+            {/* Partner / Investor CTA */}
+            <InvestorCTA />
         </main>
     );
 }

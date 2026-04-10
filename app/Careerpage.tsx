@@ -1,4 +1,4 @@
-﻿// sections/Careers/page.tsx 
+// sections/Careers/page.tsx 
 "use client";
 
 import { useEffect, useState } from 'react';
@@ -31,11 +31,10 @@ export default function Careers() {
             <section className="video-hero mt-24">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/images/hero%20bg%20all.png"
+                    src="/images/banner.png"
                     alt="Careers"
                     className="video-hero-bg"
                 />
-                <div className="video-hero-overlay"></div>
                 <div className="video-hero-content text-center px-4 max-w-4xl">
                     <h1 className="text-5xl md:text-8xl font-bold text-white mb-4 uppercase tracking-[0.05em]" data-aos="fade-up">
                         CAREERS

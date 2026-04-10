@@ -2,6 +2,7 @@
 
 import { useEffect, ReactNode } from 'react';
 import Link from 'next/link';
+import { Icon } from '@iconify/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -51,8 +52,19 @@ export default function CSIArticleLayout({
 
     return (
         <main className="pt-32 pb-20">
+            {/* Back Button */}
+            <section className="container max-w-5xl mx-auto px-4 pt-10 pb-4">
+                <Link
+                    href="/csi"
+                    className="inline-flex items-center gap-2 border border-[#00296D] bg-white text-[#00296D] hover:bg-[#00296D] hover:text-white font-bold py-2.5 px-8 rounded-full transition-colors text-sm"
+                >
+                    <Icon icon="ic:round-arrow-back" className="text-base" />
+                    Back
+                </Link>
+            </section>
+
             {/* Article Header */}
-            <section className="container max-w-5xl mx-auto px-4 pt-10">
+            <section className="container max-w-5xl mx-auto px-4 pt-6">
                 <div className="text-center mb-12" data-aos="fade-up">
                     <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 ${tagColor}`}>
                         {tag}
@@ -114,17 +126,15 @@ export default function CSIArticleLayout({
             </section>
 
             {/* Prev/Next Navigation */}
-            <section className="container max-w-4xl mx-auto px-4 py-16">
-                <div className="grid md:grid-cols-2 gap-6">
-                    {prevLink ? (
-                        <Link href={prevLink} className="article-nav-button-prev bg-primary/10 hover:bg-primary/20 text-primary font-bold py-4 px-6 rounded-lg text-center transition-colors">
+            <section className="container max-w-4xl mx-auto px-4 py-8">
+                <div className="flex flex-wrap justify-center gap-4">
+                    {prevLink && (
+                        <Link href={prevLink} className="article-nav-button-prev border border-[#00296D] bg-white text-[#00296D] hover:bg-[#00296D] hover:text-white font-bold py-2.5 px-10 rounded-full text-center transition-colors text-sm min-w-[200px]">
                             Previous Initiative
                         </Link>
-                    ) : (
-                        <div /> // Empty div to maintain grid balance
                     )}
                     {nextLink && (
-                        <Link href={nextLink} className="article-nav-button-next bg-primary text-white hover:bg-primary/90 font-bold py-4 px-6 rounded-lg text-center transition-colors">
+                        <Link href={nextLink} className="article-nav-button-next bg-[#00296D] text-white hover:bg-white hover:text-black border border-[#00296D] font-bold py-2.5 px-10 rounded-full text-center transition-colors text-sm min-w-[200px]">
                             Next Initiative
                         </Link>
                     )}

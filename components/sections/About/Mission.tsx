@@ -18,13 +18,24 @@ export default function Mission() {
                             creativity and forward-thinking, challenging norms, and adapting swiftly to evolving needs.
                         </p>
                     </div>
-                    <div className="order-1 lg:order-2" data-aos="fade-left">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <div className="group relative w-full h-auto cursor-pointer">
                         <img
                             src="/images/mission.png"
                             alt="Our Mission"
-                            className="w-full h-auto rounded-[2rem] shadow-2xl"
+                            className="w-full h-auto rounded-[2rem] shadow-2xl opacity-0"
                         />
+                        <div className="absolute top-0 left-0 w-1/2 h-1/2 overflow-hidden rounded-tl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg">
+                            <img src="/images/mission.png" alt="" className="absolute top-0 left-0 w-[200%] h-[200%] max-w-none object-cover" />
+                        </div>
+                        <div className="absolute top-0 right-0 w-1/2 h-1/2 overflow-hidden rounded-tr-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg">
+                            <img src="/images/mission.png" alt="" className="absolute top-0 right-0 w-[200%] h-[200%] max-w-none object-cover" />
+                        </div>
+                        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 overflow-hidden rounded-bl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:translate-y-3 z-10 shadow-lg">
+                            <img src="/images/mission.png" alt="" className="absolute bottom-0 left-0 w-[200%] h-[200%] max-w-none object-cover" />
+                        </div>
+                        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 overflow-hidden rounded-br-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:translate-y-3 z-10 shadow-lg">
+                            <img src="/images/mission.png" alt="" className="absolute bottom-0 right-0 w-[200%] h-[200%] max-w-none object-cover" />
+                        </div>
                     </div>
                 </div>
             </div>
