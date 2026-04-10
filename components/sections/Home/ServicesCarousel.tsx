@@ -297,13 +297,6 @@ export default function ServicesCarousel({
                   </div>
                 </div>
               </div>
-
-              {/* Current service indicator */}
-              <div className="flex justify-center mt-4">
-                <span className="text-sm text-gray-600 dark:text-gray-400">
-                  {currentIndex + 1} / {services.length}
-                </span>
-              </div>
             </div>
 
             {/* RIGHT COLUMN: Text Content (50% on desktop) */}

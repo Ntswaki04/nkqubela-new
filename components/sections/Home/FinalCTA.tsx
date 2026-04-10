@@ -42,14 +42,13 @@ export default function FinalCTA() {
         <div
           className="rounded-22 p-8 sm:p-10 md:p-16 lg:p-24 text-center text-slate-900 dark:text-white relative overflow-hidden bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/hero/globe7.png')",
+            backgroundImage: "url('/images/CTA Services.png')",
           }}
           data-aos="zoom-in"
           data-aos-duration="1400"
           data-aos-easing="ease-out-cubic"
         >
-          <div className="absolute inset-0 bg-slate-950/82 dark:bg-slate-950/92 pointer-events-none"></div>
-          <div className="absolute inset-0 bg-blue-950/40 dark:bg-blue-950/30 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-black/50 mix-blend-multiply pointer-events-none"></div>
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
           <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-ElectricAqua/20 rounded-full blur-3xl pointer-events-none"></div>
           <div className="relative z-10 space-y-8 pointer-events-auto">
@@ -70,7 +69,7 @@ export default function FinalCTA() {
               <button
                 type="button"
                 onClick={() => setIsOpen(true)}
-                className="bg-white text-primary dark:bg-gray-900 dark:text-white px-10 py-4 font-bold rounded-full hover:bg-IcyBreeze dark:hover:bg-gray-800 transition-colors shadow-xl"
+                className="bg-primary text-white px-10 py-4 font-bold rounded-full hover:bg-[#5b8cf5] transition-colors shadow-xl"
               >
                 Get Started Today
               </button>
