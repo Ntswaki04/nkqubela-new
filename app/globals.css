@@ -522,16 +522,37 @@ header.hero-new-header {
 }
 
 .mobile-nav-link {
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem 1rem;
     font-size: 1.25rem;
     font-weight: 600;
+    color: #111827;
     border-bottom: 1px solid #f3f4f6;
-    transition: color 0.3s;
+    border-radius: 0.875rem;
+    transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus-visible {
+    color: var(--primary);
+    background-color: rgba(47, 115, 242, 0.08);
+    transform: translateX(4px);
+}
+
+.mobile-nav-link:focus-visible {
+    outline: none;
 }
 
 .dark .mobile-nav-link {
+    color: #ffffff;
     border-color: var(--dark-border);
+}
+
+.dark .mobile-nav-link:hover,
+.dark .mobile-nav-link:focus-visible {
+    background-color: rgba(47, 115, 242, 0.18);
 }
 
 /* Forms */
