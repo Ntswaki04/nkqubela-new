@@ -65,17 +65,17 @@ export default function FinalCTA() {
               Partner with Nkqubela Technologies for cutting-edge ICT solutions
               tailored to your unique needs.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="mx-auto grid w-full max-w-md grid-cols-1 gap-4 sm:grid-cols-2">
               <button
                 type="button"
                 onClick={() => setIsOpen(true)}
-                className="bg-primary text-white px-10 py-4 font-bold rounded-full hover:bg-[#5b8cf5] transition-colors shadow-xl"
+                className="inline-flex w-full items-center justify-center border-2 border-transparent bg-primary px-10 py-4 font-bold text-white rounded-full hover:bg-[#5b8cf5] transition-colors shadow-xl"
               >
                 Get Started Today
               </button>
               <Link
                 href="/services"
-                className="border-2 border-white/70 text-white px-10 py-4 font-bold rounded-full hover:bg-white/10 transition-colors"
+                className="inline-flex w-full items-center justify-center border-2 border-white/70 text-white px-10 py-4 font-bold rounded-full hover:bg-white/10 transition-colors"
               >
                 Our Offerings
               </Link>
