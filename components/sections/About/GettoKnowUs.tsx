@@ -39,22 +39,22 @@ export default function GettoKnowUs() {
                         </div>
                     </div>
                     <div data-aos="fade-left">
-                        <div className="group relative w-full h-auto cursor-pointer">
+                        <div className="group relative w-full h-auto cursor-pointer overflow-hidden rounded-[2rem]">
                             <img
                                 src="/images/get to know us.png"
                                 alt="Get to Know Us"
                                 className="w-full h-auto rounded-[2rem] shadow-2xl opacity-0"
                             />
-                            <div className="absolute top-0 left-0 w-1/2 h-1/2 overflow-hidden rounded-tl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg">
+                            <div className="absolute top-0 left-0 overflow-hidden rounded-tl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg" style={{ width: 'calc(50% + 1px)', height: 'calc(50% + 1px)' }}>
                                 <img src="/images/get to know us.png" alt="" className="absolute top-0 left-0 w-[200%] h-[200%] max-w-none object-cover" />
                             </div>
-                            <div className="absolute top-0 right-0 w-1/2 h-1/2 overflow-hidden rounded-tr-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg">
+                            <div className="absolute top-0 right-0 overflow-hidden rounded-tr-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg" style={{ width: 'calc(50% + 1px)', height: 'calc(50% + 1px)' }}>
                                 <img src="/images/get to know us.png" alt="" className="absolute top-0 right-0 w-[200%] h-[200%] max-w-none object-cover" />
                             </div>
-                            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 overflow-hidden rounded-bl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:translate-y-3 z-10 shadow-lg">
+                            <div className="absolute bottom-0 left-0 overflow-hidden rounded-bl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:translate-y-3 z-10 shadow-lg" style={{ width: 'calc(50% + 1px)', height: 'calc(50% + 1px)' }}>
                                 <img src="/images/get to know us.png" alt="" className="absolute bottom-0 left-0 w-[200%] h-[200%] max-w-none object-cover" />
                             </div>
-                            <div className="absolute bottom-0 right-0 w-1/2 h-1/2 overflow-hidden rounded-br-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:translate-y-3 z-10 shadow-lg">
+                            <div className="absolute bottom-0 right-0 overflow-hidden rounded-br-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:translate-y-3 z-10 shadow-lg" style={{ width: 'calc(50% + 1px)', height: 'calc(50% + 1px)' }}>
                                 <img src="/images/get to know us.png" alt="" className="absolute bottom-0 right-0 w-[200%] h-[200%] max-w-none object-cover" />
                             </div>
                         </div>

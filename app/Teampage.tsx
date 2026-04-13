@@ -20,20 +20,21 @@ export default function TeamPage() {
       <section className="video-hero mt-24">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/hero%20bg%20all.png"
+          src="/images/banner.png"
           alt="Meet The Team"
           className="video-hero-bg"
         />
-        <div className="video-hero-overlay" />
+        {/* <div className="video-hero-overlay" /> */}
         <div className="video-hero-content text-center px-4 max-w-4xl absolute inset-0 flex flex-col justify-center items-center pointer-events-none mt-20">
           <h1
-            className="text-5xl md:text-8xl font-bold text-white mb-4 uppercase tracking-[0.05em] pointer-events-auto"
+            className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-[0_8px_20px_rgba(0,0,0,0.55)] pointer-events-auto"
             data-aos="fade-up"
           >
             MEET THE TEAM
           </h1>
           <p
-            className="text-xl md:text-2xl text-white font-bold uppercase tracking-[0.3em] opacity-90 pointer-events-auto"
+            className="text-xl md:text-2xl text-white/90 font-medium leading-loose max-w-3xl mx-auto pointer-events-auto"
+            style={{ color: '#ffffff' }}
             data-aos="fade-up"
             data-aos-delay="100"
           >

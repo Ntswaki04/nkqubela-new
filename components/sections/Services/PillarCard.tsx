@@ -21,6 +21,14 @@ export default function PillarCard({ pillar, index, isDark }: PillarCardProps) {
     useEffect(() => {
         const el = ref.current;
         if (!el) return;
+
+        // On mobile, show cards immediately — no scroll-triggered animation
+        if (window.innerWidth < 1024) {
+            setVisible(true);
+            return;
+        }
+
+        // On desktop, animate in as the card scrolls into view
         const observer = new IntersectionObserver(
             ([entry]) => { if (entry.isIntersecting) setVisible(true); },
             { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }

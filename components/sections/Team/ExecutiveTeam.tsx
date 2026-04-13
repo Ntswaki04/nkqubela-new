@@ -16,12 +16,6 @@ export default function ExecutiveTeam() {
                             Executive Team
                         </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold dark:text-white max-w-4xl mx-auto leading-tight mt-6">
-                        VISIONARY LEADERS.
-                    </h2>
-                    <p className="text-xl md:text-2xl text-SlateBlueText dark:text-gray-400 mt-4 font-medium max-w-3xl mx-auto">
-                        Drivers of Nkqubela Technologies
-                    </p>
                 </div>
 
                 {/* Members */}

@@ -22,19 +22,19 @@ export default function CSIFocusAreas() {
                             data-aos="fade-up"
                             data-aos-delay={i * 80}
                         >
-                            {/* Label column — desktop only */}
+                            {/* Label column — md and up only */}
                             <div className="hidden md:flex w-48 lg:w-56 flex-shrink-0 items-center py-7 pl-0 pr-8 border-r border-gray-200 dark:border-gray-700">
                                 <span className="text-base font-semibold dark:text-white">
                                     {area.title}
                                 </span>
                             </div>
 
-                            {/* Value column */}
-                            <div className="flex-1 flex items-center py-7 px-6 md:pl-10">
-                                {/* Mobile label */}
-                                <div className="md:hidden text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">
+                            {/* Value column — stacks vertically on mobile */}
+                            <div className="flex-1 flex flex-col justify-center py-6 px-4 md:px-10 gap-1.5">
+                                {/* Mobile label — shown only on mobile, stacked above description */}
+                                <span className="md:hidden text-xs font-bold uppercase tracking-widest text-gray-500">
                                     {area.title}
-                                </div>
+                                </span>
                                 <p className="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
                                     {area.desc}
                                 </p>

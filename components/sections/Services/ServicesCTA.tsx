@@ -20,10 +20,10 @@ export default function ServicesCTA() {
                     {/* Dark shade removed for clear image background */}
                     <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
                         <div className="space-y-6 max-w-2xl text-center lg:text-left">
-                            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                            <h2 className="text-4xl md:text-5xl font-bold leading-tight" style={{ color: '#ffffff' }}>
                                 Need a Custom Solution?
                             </h2>
-                            <p className="text-white/90 text-xl font-medium">
+                            <p className="text-xl font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
                                 Our team is ready to design an ICT strategy tailored to your business needs.
                             </p>
                         </div>

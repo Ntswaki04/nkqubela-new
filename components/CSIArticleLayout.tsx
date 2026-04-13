@@ -66,12 +66,12 @@ export default function CSIArticleLayout({
             {/* Article Header */}
             <section className="container max-w-5xl mx-auto px-4 pt-6">
                 <div className="text-center mb-12" data-aos="fade-up">
-                    <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 ${tagColor}`}>
-                        {tag}
+                    <div className="inline-block px-4 py-1.5 border border-primary/20 rounded-full mb-6" style={{ backgroundColor: '#F4F8FE' }}>
+                        <span className="text-primary text-xs font-bold uppercase tracking-widest">{tag}</span>
                     </div>
                     <h1
                         className="text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white leading-tight mb-8"
-                        style={{ fontFamily: "'Playfair Display', serif" }}
+                        style={{ fontFamily: 'var(--font-inter)' }}
                     >
                         {title}
                     </h1>

@@ -9,7 +9,7 @@ export default function CSICta() {
         <section className="pb-24 bg-white dark:bg-darkmode">
             <div className="container px-4">
                 <div
-                    className="relative overflow-hidden rounded-3xl p-10 md:py-16 md:px-16"
+                    className="cta-section-custom relative overflow-hidden rounded-3xl p-10 md:py-16 md:px-16"
                     style={{
                         backgroundImage: 'url("/images/CTA%20csi.png")',
                         backgroundSize: 'cover',
@@ -17,13 +17,13 @@ export default function CSICta() {
                     }}
                     data-aos="zoom-in"
                 >
-                    <div className="absolute inset-0 bg-[#011120]/70 mix-blend-multiply rounded-3xl" />
+                    <div className="absolute inset-0 rounded-3xl" />
                     <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
                         <div className="space-y-5 max-w-2xl text-center lg:text-left">
-                            <h2 className="text-4xl md:text-[2.6rem] font-bold text-white leading-tight">
+                            <h2 className="text-4xl md:text-[2.6rem] font-bold leading-tight" style={{ color: '#ffffff' }}>
                                 Want to Collaborate on a<br className="hidden md:block" /> CSI Initiative?
                             </h2>
-                            <p className="text-white/90 text-[1.1rem] font-medium max-w-xl">
+                            <p className="text-[1.1rem] font-medium max-w-xl" style={{ color: 'rgba(255,255,255,0.9)' }}>
                                 Our team is ready to design an impact strategy tailored to the needs of your community.
                             </p>
                         </div>

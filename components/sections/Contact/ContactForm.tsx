@@ -30,7 +30,7 @@ export default function ContactForm() {
         'w-full px-6 py-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-darklight focus:ring-2 focus:border-transparent outline-none transition-all dark:text-white';
 
     const labelClass =
-        'block text-xs font-bold mb-3 uppercase tracking-widest text-gray-500 dark:text-gray-400';
+        'block text-xs font-bold mb-3 uppercase tracking-widest text-black dark:text-gray-300';
 
     return (
         <div id="contact-form" data-aos="fade-up" data-aos-delay="100">
