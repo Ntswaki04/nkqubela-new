@@ -1,4 +1,4 @@
-﻿// sections/Services/PillarCard.tsx
+// sections/Services/PillarCard.tsx
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
@@ -9,29 +9,37 @@ interface PillarCardProps {
     pillar: Pillar;
     index: number;
     isDark: boolean;
+    forceVisible?: boolean;
 }
 
-export default function PillarCard({ pillar, index, isDark }: PillarCardProps) {
+export default function PillarCard({ pillar, index, isDark, forceVisible = false }: PillarCardProps) {
     const ref = useRef<HTMLDivElement>(null);
-    const [visible, setVisible] = useState(false);
+    // If forceVisible, start visible immediately (no animation flash on mobile)
+    const [visible, setVisible] = useState(forceVisible);
     const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
     const hoverColour = isDark ? '#ffffff' : '#072B61';
 
     useEffect(() => {
+        // Skip observer when content must always be visible (e.g. mobile)
+        if (forceVisible) return;
+
         const el = ref.current;
         if (!el) return;
+
+        // On desktop, animate in as the card scrolls into view
         const observer = new IntersectionObserver(
             ([entry]) => { if (entry.isIntersecting) setVisible(true); },
             { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
         );
         observer.observe(el);
         return () => observer.disconnect();
-    }, []);
+    }, [forceVisible]);
 
     return (
         <div
             ref={ref}
+            id={pillar.id}
             style={{
                 opacity: visible ? 1 : 0,
                 transform: visible ? 'translateY(0)' : 'translateY(40px)',

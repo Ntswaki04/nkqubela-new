@@ -16,13 +16,10 @@ export default function ExecutiveTeam() {
                             Executive Team
                         </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-bold dark:text-white max-w-4xl mx-auto leading-tight mt-6">
-                        VISIONARY LEADERS.
-                    </h2>
                 </div>
 
                 {/* Members */}
-                <div className="space-y-32">
+                <div className="border-t border-gray-200 dark:border-gray-800">
                     {executiveTeam.map((member, i) => (
                         <TeamMember
                             key={member.name}

@@ -9,6 +9,7 @@ import GettoKnowUs from '@/components/sections/About/GettoKnowUs';
 import Vision from '@/components/sections/About/Vision';
 import Mission from '@/components/sections/About/Mission';
 import CoreValues from '@/components/sections/About/CoreValues';
+import InvestorCTA from '@/components/sections/About/InvestorCTA';
 
 export default function AboutPage() {
     useEffect(() => {
@@ -21,20 +22,20 @@ export default function AboutPage() {
             <section className="video-hero mt-24">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                    src="/images/hero%20bg%20all.png"
+                    src="/images/banner.png"
                     alt="Our Story"
                     className="video-hero-bg"
                 />
-                <div className="video-hero-overlay"></div>
                 <div className="video-hero-content text-center px-4 max-w-4xl">
                     <h1
-                        className="text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-[0.05em]"
+                        className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-[0_8px_20px_rgba(0,0,0,0.55)]"
                         data-aos="fade-up"
                     >
                         OUR STORY
                     </h1>
                     <p
-                        className="text-xl md:text-2xl text-white font-bold uppercase tracking-[0.3em] opacity-90"
+                        className="text-xl md:text-2xl font-medium leading-loose max-w-3xl mx-auto"
+                        style={{ color: '#ffffff' }}
                         data-aos="fade-up"
                         data-aos-delay="100"
                     >
@@ -47,6 +48,9 @@ export default function AboutPage() {
             <Vision />
             <Mission />
             <CoreValues />
+
+            {/* Partner / Investor CTA */}
+            <InvestorCTA />
         </main>
     );
 }

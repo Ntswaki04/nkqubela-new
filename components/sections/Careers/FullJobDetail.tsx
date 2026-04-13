@@ -17,10 +17,10 @@ export default function FullJobDetail({ job, onBack }: FullJobDetailProps) {
             <div className="mb-8">
                 <button
                     onClick={onBack}
-                    className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors uppercase tracking-widest"
+                    className="inline-flex items-center gap-2 border border-[#00296D] bg-white text-[#00296D] hover:bg-[#00296D] hover:text-white font-bold py-2.5 px-8 rounded-full transition-colors text-sm"
                 >
-                    <Icon icon="ic:round-arrow-back" className="text-lg group-hover:-translate-x-1 transition-transform" />
-                    Back to open roles
+                    <Icon icon="ic:round-arrow-back" className="text-base" />
+                    Back
                 </button>
             </div>
 
@@ -218,42 +218,21 @@ export default function FullJobDetail({ job, onBack }: FullJobDetailProps) {
                     </div>
                 </section>
 
-                {/* In-detail CTA RESTORED */}
-                <div
-                    className="cta-section-custom relative overflow-hidden rounded-3xl p-10 md:py-16 md:px-16"
-                    style={{ backgroundImage: 'url("/images/CTA%20jobs.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}
-                    data-aos="zoom-in"
-                >
-                    <div className="absolute inset-0 bg-[#232323]/70 mix-blend-multiply rounded-3xl"></div>
-                    <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-                        <div className="space-y-4 max-w-xl text-center lg:text-left">
-                            <h4 className="text-3xl md:text-[2.6rem] font-bold text-white leading-tight">
-                                Ready to take the <br className="hidden md:block" /> lead?
-                            </h4>
-                            <div className="space-y-2">
-                                <p className="text-lg md:text-xl text-white/90 font-medium">
-                                    Reply to{' '}
-                                    <a href="mailto:NokwandaB@Nkqubela.co.za" className="text-white underline font-bold hover:text-IcyBreeze transition-colors">
-                                        NokwandaB@Nkqubela.co.za
-                                    </a>
-                                </p>
-                                <p className="text-white/80">
-                                    Deadline: <span className="font-bold text-white">Monday 15 March 2026</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col items-center lg:items-end gap-4">
-                            <a
-                                href="mailto:NokwandaB@Nkqubela.co.za"
-                                className="bg-[#07367c] text-white hover:bg-[#07367c]/90 transition-colors px-10 py-4 rounded-full font-bold shadow-lg block whitespace-nowrap text-lg md:text-xl"
-                            >
-                                Apply via Email
-                            </a>
-                            <p className="text-sm text-white/70 italic">
-                                Questions? Contact Nokwanda Badli – 073 515 0889
-                            </p>
-                        </div>
-                    </div>
+                {/* Apply CTA */}
+                <div className="border-t border-gray-100 dark:border-gray-800 pt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                    <p className="text-base text-gray-500 dark:text-gray-400 max-w-md leading-relaxed">
+                        Ready to apply? Send your CV and a short cover letter to{' '}
+                        <a href="mailto:NokwandaB@Nkqubela.co.za" className="text-[#00296D] dark:text-primary font-semibold hover:underline transition-colors">
+                            NokwandaB@Nkqubela.co.za
+                        </a>
+                    </p>
+                    <a
+                        href="mailto:NokwandaB@Nkqubela.co.za"
+                        className="inline-flex items-center gap-2 bg-[#00296D] text-white hover:bg-[#001f52] transition-colors px-8 py-3 rounded-full font-bold shadow text-sm whitespace-nowrap flex-shrink-0"
+                    >
+                        <Icon icon="lucide:send" className="text-base" />
+                        Apply via Email
+                    </a>
                 </div>
             </div>
         </div>

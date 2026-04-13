@@ -42,3 +42,6 @@ next-env.d.ts
 
 # local IDE cache
 .vs/
+
+# Claude Code
+.claude/

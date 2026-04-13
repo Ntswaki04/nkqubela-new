@@ -69,12 +69,12 @@ export default function StickyLeft() {
                     style={{ fontSize: 'clamp(36px, 4vw, 52px)', lineHeight: 1.12 }}
                 >
                     Fresh Perspectives<br />
-                    On <span className="text-primary italic">Strategy.</span>
+                    On <span className="text-gray-900 dark:text-white italic">Strategy.</span>
                 </h2>
 
                 {/* Sub-text */}
                 <p
-                    className="text-SlateBlueText dark:text-gray-400 leading-relaxed max-w-[300px]"
+                    className="text-black dark:text-gray-400 leading-relaxed max-w-[300px]"
                     style={{ fontSize: 15 }}
                 >
                     We combine strategy, creativity, and technology to help brands grow in the modern digital landscape.

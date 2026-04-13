@@ -40,7 +40,7 @@ export default function FinalCTA() {
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-IcyBreeze dark:from-darklight to-transparent dark:to-transparent pointer-events-none"></div>
       <div className="container relative z-10 pt-8 lg:pt-10">
         <div
-          className="rounded-22 p-8 sm:p-10 md:p-16 lg:p-24 text-center text-slate-900 dark:text-white relative overflow-hidden bg-cover bg-center bg-no-repeat"
+          className="cta-white-text rounded-22 p-8 sm:p-10 md:p-16 lg:p-24 text-center text-white relative overflow-hidden bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/images/CTA Services.png')",
           }}
@@ -59,7 +59,8 @@ export default function FinalCTA() {
               Ready to Transform Your Business with Technology?
             </h2>
             <p
-              className="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto drop-shadow-md"
+              className="text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md"
+              style={{ color: 'rgba(255,255,255,0.9)' }}
               style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
             >
               Partner with Nkqubela Technologies for cutting-edge ICT solutions

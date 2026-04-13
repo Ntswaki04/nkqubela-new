@@ -11,20 +11,31 @@ export default function Mission() {
                             <span className="text-primary text-xs font-bold uppercase tracking-widest">Our Mission</span>
                         </div>
                         <h2 className="text-5xl md:text-6xl font-bold dark:text-white leading-tight uppercase">MISSION</h2>
-                        <p className="text-xl text-SlateBlueText dark:text-darktext leading-relaxed font-medium">
+                        <p className="text-base leading-relaxed font-normal text-black dark:text-darktext" style={{ fontFamily: 'var(--font-poppins)' }}>
                             At Nkqubela Technologies, our mission is to embody our core values of innovation, disruption,
                             and agility. By aligning our resources strategically, we optimize the quality of our
                             end-products and deliver a superior customer service experience. We foster a culture of
                             creativity and forward-thinking, challenging norms, and adapting swiftly to evolving needs.
                         </p>
                     </div>
-                    <div className="order-1 lg:order-2" data-aos="fade-left">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <div className="group relative w-full h-auto cursor-pointer overflow-hidden rounded-[2rem]">
                         <img
                             src="/images/mission.png"
                             alt="Our Mission"
-                            className="w-full h-auto rounded-[2rem] shadow-2xl"
+                            className="w-full h-auto rounded-[2rem] shadow-2xl opacity-0"
                         />
+                        <div className="absolute top-0 left-0 overflow-hidden rounded-tl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg" style={{ width: 'calc(50% + 1px)', height: 'calc(50% + 1px)' }}>
+                            <img src="/images/mission.png" alt="" className="absolute top-0 left-0 w-[200%] h-[200%] max-w-none object-cover" />
+                        </div>
+                        <div className="absolute top-0 right-0 overflow-hidden rounded-tr-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:-translate-y-3 z-10 shadow-lg" style={{ width: 'calc(50% + 1px)', height: 'calc(50% + 1px)' }}>
+                            <img src="/images/mission.png" alt="" className="absolute top-0 right-0 w-[200%] h-[200%] max-w-none object-cover" />
+                        </div>
+                        <div className="absolute bottom-0 left-0 overflow-hidden rounded-bl-[2rem] transition-transform duration-300 ease-out group-hover:-translate-x-3 group-hover:translate-y-3 z-10 shadow-lg" style={{ width: 'calc(50% + 1px)', height: 'calc(50% + 1px)' }}>
+                            <img src="/images/mission.png" alt="" className="absolute bottom-0 left-0 w-[200%] h-[200%] max-w-none object-cover" />
+                        </div>
+                        <div className="absolute bottom-0 right-0 overflow-hidden rounded-br-[2rem] transition-transform duration-300 ease-out group-hover:translate-x-3 group-hover:translate-y-3 z-10 shadow-lg" style={{ width: 'calc(50% + 1px)', height: 'calc(50% + 1px)' }}>
+                            <img src="/images/mission.png" alt="" className="absolute bottom-0 right-0 w-[200%] h-[200%] max-w-none object-cover" />
+                        </div>
                     </div>
                 </div>
             </div>

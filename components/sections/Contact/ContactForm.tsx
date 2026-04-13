@@ -1,4 +1,4 @@
-﻿// sections/Contact/ContactForm.tsx
+// sections/Contact/ContactForm.tsx
 "use client";
 
 import { useState } from "react";
@@ -26,20 +26,21 @@ export default function ContactForm() {
     return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
-  const inputClass =
-    "w-full px-6 py-3 rounded-2xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-darklight focus:ring-2 focus:border-transparent outline-none transition-all dark:text-white";
+    const inputClass =
+        'w-full px-6 py-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-darklight focus:ring-2 focus:border-transparent outline-none transition-all dark:text-white';
 
-  const labelClass =
-    "block text-xs font-bold mb-3 uppercase tracking-widest text-gray-500 dark:text-gray-400";
+    const labelClass =
+        'block text-xs font-bold mb-3 uppercase tracking-widest text-black dark:text-gray-300';
 
-  return (
-    <div className="h-full" data-aos="fade-up" data-aos-delay="100">
-      <div className="flex items-center gap-3 mb-8">
-        <div className="w-1.5 h-8 bg-[#072B61] rounded-full"></div>
-        <h2 className="text-3xl font-bold dark:text-white">
-          Send Us a Message
-        </h2>
-      </div>
+    return (
+        <div id="contact-form" data-aos="fade-up" data-aos-delay="100">
+            <div className="flex items-center gap-3 mb-10">
+                <div className="w-1.5 h-8 bg-[#072B61] rounded-full"></div>
+                <h2 className="text-3xl font-bold dark:text-white">Send Us a Message</h2>
+            </div>
+
+            <div className="border-t border-gray-200 dark:border-gray-700 pt-10">
+                <form className="space-y-6 max-w-3xl" onSubmit={(e) => e.preventDefault()}>
 
       <div className="border-t border-gray-200 dark:border-gray-700 pt-8 h-[640px] xl:h-[620px]">
         <form
@@ -95,15 +96,15 @@ export default function ContactForm() {
               />
             </div>
 
-            {/* Message */}
-            <div>
-              <label className={labelClass}>Message</label>
-              <textarea
-                className={`${inputClass} min-h-[120px] xl:min-h-[140px] resize-none`}
-                placeholder="Your message..."
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              />
+                    {/* Submit */}
+                    <a
+                        href={buildMailto()}
+                        className="inline-flex items-center gap-3 py-2.5 px-10 font-bold rounded-full text-sm text-white bg-[#00296D] border border-[#00296D] hover:bg-white hover:text-black transition-all shadow-lg"
+                    >
+                        <Icon icon="ic:round-send" className="text-base" />
+                        Submit Message
+                    </a>
+                </form>
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-﻿// sections/Team/ManagementBanner.tsx
+// sections/Team/ManagementBanner.tsx
 "use client";
 
 export default function ManagementBanner() {
@@ -13,8 +13,7 @@ export default function ManagementBanner() {
                 className="absolute inset-0 w-full h-full object-cover z-0"
             />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/60 z-10" />
+            {/* Shading removed for clear background */}
 
             {/* Content */}
             <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">

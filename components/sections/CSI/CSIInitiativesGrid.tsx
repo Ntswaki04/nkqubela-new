@@ -83,7 +83,7 @@ export default function CSIInitiativesGrid({ isDark }: CSIInitiativesGridProps) 
                             <div className="p-8 space-y-4">
                                 <h3
                                     className="text-xl font-bold leading-snug transition-colors duration-200 dark:text-white"
-                                    style={{ color: hoveredCard === init.slug + i ? hoverColour : undefined }}
+                                    style={{ color: hoveredCard === init.slug + i ? hoverColour : undefined, fontFamily: 'var(--font-inter)' }}
                                 >
                                     {init.title}
                                 </h3>
@@ -92,17 +92,11 @@ export default function CSIInitiativesGrid({ isDark }: CSIInitiativesGridProps) 
                                 </p>
 
                                 {/* Meta row */}
-                                <div
-                                    className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-bold uppercase tracking-widest transition-colors duration-200"
-                                    style={{
-                                        color: hoveredCard === init.slug + i
-                                            ? (isDark ? 'rgba(255,255,255,0.7)' : '#6b7280')
-                                            : '#9ca3af'
-                                    }}
-                                >
-                                    <span>{init.date}</span>
-                                    <span className="w-px h-3 bg-gray-300 dark:bg-gray-600 hidden sm:inline-block" />
-                                    <span>{init.tag}</span>
+                                <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                                    <span className="text-xs text-gray-400 font-bold uppercase tracking-widest">{init.date}</span>
+                                    <div className="inline-block px-3 py-1 border border-primary/20 rounded-full" style={{ backgroundColor: '#F4F8FE' }}>
+                                        <span className="text-primary text-xs font-bold uppercase tracking-widest">{init.tag}</span>
+                                    </div>
                                 </div>
 
                                 {/* Arrow */}

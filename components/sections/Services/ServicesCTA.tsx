@@ -1,4 +1,4 @@
-﻿// sections/Services/ServicesCTA.tsx
+// sections/Services/ServicesCTA.tsx
 "use client";
 
 import { useState } from "react";
@@ -65,35 +65,26 @@ export default function ServicesCTA() {
                   onClick={() => setIsOpen(true)}
                   className="bg-primary text-white hover:bg-white hover:text-primary transition-colors px-8 py-4 rounded-full font-bold shadow-lg block whitespace-nowrap"
                 >
-                  Contact Us Today
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <button
-            type="button"
-            className="absolute inset-0 z-0 bg-black/60 backdrop-blur-[2px]"
-            onClick={() => setIsOpen(false)}
-            aria-label="Close popup"
-          />
-          <div className="relative z-10 w-full max-w-2xl rounded-2xl bg-white dark:bg-darkmode p-6 sm:p-8 shadow-2xl border border-gray-200 dark:border-gray-700">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-bold dark:text-white">
-                Send Us a Message
-              </h3>
-              <button
-                type="button"
-                className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-darklight"
-                onClick={() => setIsOpen(false)}
-                aria-label="Close form"
-              >
-                x
-              </button>
+                    {/* Dark shade removed for clear image background */}
+                    <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+                        <div className="space-y-6 max-w-2xl text-center lg:text-left">
+                            <h2 className="text-4xl md:text-5xl font-bold leading-tight" style={{ color: '#ffffff' }}>
+                                Need a Custom Solution?
+                            </h2>
+                            <p className="text-xl font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                                Our team is ready to design an ICT strategy tailored to your business needs.
+                            </p>
+                        </div>
+                        <div>
+                            <Link
+                                href="/contact"
+                                className="bg-[#00296D] text-white border border-[#00296D] hover:bg-white hover:text-black transition-colors px-10 py-2.5 rounded-full font-bold shadow-lg block whitespace-nowrap text-sm"
+                            >
+                                Contact Us Today
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <form className="space-y-5" onSubmit={submitForm}>

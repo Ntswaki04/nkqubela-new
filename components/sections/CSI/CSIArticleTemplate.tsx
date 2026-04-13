@@ -70,7 +70,7 @@ export default function CSIArticleTemplate({ slug }: { slug: string }) {
                         );
                     case 'heading':
                         return (
-                            <h3 key={idx} className="text-2xl font-bold dark:text-white mb-6 mt-8">
+                            <h3 key={idx} className="text-2xl font-bold dark:text-white mb-6 mt-8" style={{ fontFamily: 'var(--font-inter)' }}>
                                 {section.text}
                             </h3>
                         );
