@@ -26,6 +26,19 @@ export default function LeadershipTeam() {
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-IcyBreeze dark:from-darklight to-transparent dark:to-transparent pointer-events-none"></div>
       <div className="container overflow-visible relative z-10 pt-8 lg:pt-10">
         <div className="relative mx-auto max-w-6xl">
+          <div
+            className="mx-auto mb-10 max-w-2xl px-4 text-center xl:hidden"
+            data-aos="fade-up"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Our Leadership Team
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+              Guided by visionaries with a passion for innovation and digital
+              transformation.
+            </p>
+          </div>
+
           <div className="hidden xl:grid xl:grid-cols-[280px_minmax(0,1fr)_280px] items-center gap-8 2xl:gap-12 min-h-[560px]">
             <div
               className="relative z-10 w-[250px] xl:w-[280px] float-axis-left justify-self-start"
@@ -102,7 +115,7 @@ export default function LeadershipTeam() {
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 xl:hidden">
+          <div className="grid grid-cols-1 gap-6 xl:hidden">
             {leaders.map((leader) => (
               <div
                 key={leader.name}

@@ -256,11 +256,11 @@ export default function ServicesCarousel({
 
         <div className="relative">
           {/* Main Content Grid - Text on RIGHT side */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-4 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-4 items-start">
             {/* LEFT COLUMN: Image Gallery (50% on desktop) */}
-            <div className="lg:col-span-6 order-2 lg:order-1">
+            <div className="lg:col-span-6 order-2 lg:order-1 mt-1 sm:mt-0">
               {/* Dual Column Gallery Container */}
-              <div className="flex w-full gap-3 lg:gap-4 justify-center overflow-hidden h-[280px] lg:h-[500px]">
+              <div className="flex w-full gap-4 sm:gap-5 lg:gap-4 justify-center overflow-hidden h-[280px] lg:h-[500px]">
                 {/* LEFT GALLERY COLUMN - 9 items total */}
                 <div className="relative w-full max-w-[175px] sm:max-w-[190px] lg:max-w-[230px]">
                   <div
@@ -301,7 +301,7 @@ export default function ServicesCarousel({
 
             {/* RIGHT COLUMN: Text Content (50% on desktop) */}
             <div className="lg:col-span-6 order-1 lg:order-2">
-              <div className="relative h-[350px] lg:h-[500px] overflow-hidden">
+              <div className="relative min-h-[460px] sm:min-h-[350px] lg:h-[500px] overflow-hidden">
                 <div
                   className="flex transition-transform duration-700 ease-in-out h-full"
                   style={{
@@ -312,7 +312,7 @@ export default function ServicesCarousel({
                   {services.map((service) => (
                     <div
                       key={service.id}
-                      className="flex-shrink-0 p-4 lg:p-6 flex flex-col justify-center h-full"
+                      className="flex-shrink-0 px-3 py-4 sm:p-4 lg:p-6 flex flex-col justify-center h-full"
                       style={{ width: `${100 / services.length}%` }}
                     >
                       {/* Service Title */}
@@ -321,14 +321,14 @@ export default function ServicesCarousel({
                       </h3>
 
                       {/* Service Text */}
-                      <blockquote className="text-lg lg:text-xl leading-relaxed text-gray-800 dark:text-gray-200">
+                      <blockquote className="text-base sm:text-lg lg:text-xl leading-relaxed text-gray-800 dark:text-gray-200">
                         {service.text}
                       </blockquote>
 
-                      <div className="mt-6">
+                      <div className="mt-6 sm:mt-8">
                         <Link
                           href="/services"
-                          className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-transparent text-primary dark:text-primary-light border-2 border-primary/40 dark:border-primary-light/40 hover:border-primary dark:hover:border-primary-light transition-colors duration-300"
+                          className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-transparent text-primary dark:text-primary-light border-2 border-primary/40 dark:border-primary-light/40 hover:border-primary dark:hover:border-primary-light transition-colors duration-300"
                         >
                           View More
                           <span aria-hidden="true">→</span>

@@ -1,8 +1,8 @@
 ﻿// sections/CSI/CSICta.tsx
 "use client";
 
-import Link from 'next/link';
-import { Icon } from '@iconify/react';
+import { useState } from "react";
+import { Icon } from "@iconify/react";
 
 export default function CSICta() {
     return (
@@ -41,6 +41,75 @@ export default function CSICta() {
                     </div>
                 </div>
             </div>
-        </section>
-    );
+
+            <form className="space-y-5" onSubmit={submitForm}>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className={labelClass}>First Name</label>
+                  <input
+                    type="text"
+                    className={inputClass}
+                    placeholder="First Name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <label className={labelClass}>Last Name</label>
+                  <input
+                    type="text"
+                    className={inputClass}
+                    placeholder="Last Name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className={labelClass}>Email</label>
+                <input
+                  type="email"
+                  className={inputClass}
+                  placeholder="you@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <label className={labelClass}>Subject</label>
+                <input
+                  type="text"
+                  className={inputClass}
+                  placeholder="How can we help?"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                />
+              </div>
+
+              <div>
+                <label className={labelClass}>Message</label>
+                <textarea
+                  className={`${inputClass} min-h-[140px] resize-none`}
+                  placeholder="Your message..."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                />
+              </div>
+
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  className="inline-flex items-center gap-2 py-3 px-7 font-bold rounded-full text-white bg-[#072B61] hover:bg-[#05204a] transition-colors"
+                >
+                  Submit Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
