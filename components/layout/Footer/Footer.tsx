@@ -11,8 +11,11 @@ export default function Footer() {
         {/* Logo Overlapping Top */}
         <div className="footer-grid">
           {/* Brand Column */}
-          <div className="footer-column !items-center !text-center">
-            <Link href="/" className="inline-flex items-center justify-center">
+          <div className="footer-column !items-start !text-left md:!items-center md:!text-center">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-start md:justify-center"
+            >
               <Image
                 src="/images/logo/Nkqubela-Technologies-Logo.png"
                 alt="Nkqubela Logo"
@@ -24,7 +27,7 @@ export default function Footer() {
             <p className="footer-link-item mt-4 max-w-[220px]">
               Simplifying Complexity
             </p>
-            <div className="mt-5 flex w-full justify-center">
+            <div className="mt-5 flex w-full justify-start md:justify-center">
               <a
                 href="https://www.linkedin.com/company/nkqubela-technologies"
                 target="_blank"

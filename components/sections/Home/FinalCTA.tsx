@@ -65,7 +65,7 @@ export default function FinalCTA() {
               Partner with Nkqubela Technologies for cutting-edge ICT solutions
               tailored to your unique needs.
             </p>
-            <div className="mx-auto grid w-full max-w-md grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="mx-auto grid w-full max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
               <button
                 type="button"
                 onClick={() => setIsOpen(true)}
