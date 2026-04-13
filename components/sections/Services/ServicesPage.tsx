@@ -68,10 +68,10 @@ export default function ServicesPage() {
                     </div>
                 </div>
 
-                {/* Mobile/tablet: pillar cards stacked */}
+                {/* Mobile/tablet: pillar cards stacked — always visible, no animation */}
                 <div className="lg:hidden container px-4 flex flex-col gap-10">
                     {pillars.map((pillar, i) => (
-                        <PillarCard key={pillar.id} pillar={pillar} index={i} isDark={isDark} />
+                        <PillarCard key={`mobile-${pillar.id}`} pillar={pillar} index={i} isDark={isDark} forceVisible />
                     ))}
                 </div>
             </section>

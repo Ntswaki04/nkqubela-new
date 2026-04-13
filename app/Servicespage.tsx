@@ -54,9 +54,32 @@ export default function Services() {
 
             {/* ── SIX PILLARS – JS STICKY SCROLL ── */}
             <section className="bg-white dark:bg-darkmode py-20 relative">
+
+                {/* ── MOBILE / TABLET: heading + cards stacked vertically ── */}
+                <div className="lg:hidden container px-4 pb-10">
+                    <div className="inline-flex items-center gap-2 bg-white dark:bg-darklight border border-gray-200 dark:border-darkborder rounded-full px-4 py-1.5 text-sm font-bold text-primary mb-6 shadow-sm">
+                        What We Do
+                    </div>
+                    <h2 className="text-3xl font-extrabold dark:text-white mb-3" style={{ lineHeight: 1.12 }}>
+                        Fresh Perspectives<br />
+                        On <span className="text-primary italic">Strategy.</span>
+                    </h2>
+                    <p className="text-SlateBlueText dark:text-gray-400 leading-relaxed text-base max-w-md mb-10">
+                        We combine strategy, creativity, and technology to help brands grow in the modern digital landscape.
+                    </p>
+
+                    {/* Pillar cards — always visible on mobile, no observer dependency */}
+                    <div className="flex flex-col gap-10">
+                        {pillars.map((pillar, i) => (
+                            <PillarCard key={`mobile-${pillar.id}`} pillar={pillar} index={i} isDark={isDark} forceVisible />
+                        ))}
+                    </div>
+                </div>
+
+                {/* ── DESKTOP: sticky left panel + scrolling right feed ── */}
                 <div
+                    className="hidden lg:flex"
                     style={{
-                        display: 'flex',
                         alignItems: 'flex-start',
                         maxWidth: 1400,
                         margin: '0 auto',
@@ -64,10 +87,7 @@ export default function Services() {
                         gap: 80,
                     }}
                 >
-                    {/* JS-driven sticky left panel */}
                     <StickyLeft />
-
-                    {/* Scrolling right pillar feed */}
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 64 }}>
                         {pillars.map((pillar, i) => (
                             <PillarCard key={pillar.id} pillar={pillar} index={i} isDark={isDark} />

@@ -9,24 +9,23 @@ interface PillarCardProps {
     pillar: Pillar;
     index: number;
     isDark: boolean;
+    forceVisible?: boolean;
 }
 
-export default function PillarCard({ pillar, index, isDark }: PillarCardProps) {
+export default function PillarCard({ pillar, index, isDark, forceVisible = false }: PillarCardProps) {
     const ref = useRef<HTMLDivElement>(null);
-    const [visible, setVisible] = useState(false);
+    // If forceVisible, start visible immediately (no animation flash on mobile)
+    const [visible, setVisible] = useState(forceVisible);
     const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
     const hoverColour = isDark ? '#ffffff' : '#072B61';
 
     useEffect(() => {
+        // Skip observer when content must always be visible (e.g. mobile)
+        if (forceVisible) return;
+
         const el = ref.current;
         if (!el) return;
-
-        // On mobile, show cards immediately — no scroll-triggered animation
-        if (window.innerWidth < 1024) {
-            setVisible(true);
-            return;
-        }
 
         // On desktop, animate in as the card scrolls into view
         const observer = new IntersectionObserver(
@@ -35,7 +34,7 @@ export default function PillarCard({ pillar, index, isDark }: PillarCardProps) {
         );
         observer.observe(el);
         return () => observer.disconnect();
-    }, []);
+    }, [forceVisible]);
 
     return (
         <div
