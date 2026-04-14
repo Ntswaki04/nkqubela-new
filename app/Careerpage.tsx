@@ -1,71 +1,79 @@
-// sections/Careers/page.tsx 
+// sections/Careers/page.tsx
 "use client";
 
-import { useEffect, useState } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import { Job } from '@/components/sections/Careers/Jobdata';
-import CurrentOpenings from '@/components/sections/Careers/ CurrentOpenings';
-import FullJobDetail from '@/components/sections/Careers/FullJobDetail';
-import CTAcareers from '@/components/sections/Careers/CTAcareers';
+import { Job } from "@/components/sections/careers/Jobdata";
+import CurrentOpenings from "@/components/sections/careers/ CurrentOpenings";
+import FullJobDetail from "@/components/sections/careers/FullJobDetail";
+import CTAcareers from "@/components/sections/careers/CTAcareers";
 
 export default function Careers() {
-    const [selectedJob, setSelectedJob] = useState<Job | null>(null);
-    const [hoveredJob, setHoveredJob] = useState<string | null>(null);
-    const [isDark, setIsDark] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+  const [hoveredJob, setHoveredJob] = useState<string | null>(null);
+  const [isDark, setIsDark] = useState(false);
 
-    useEffect(() => {
-        AOS.init({ duration: 1000, once: true, offset: 50 });
-        // Detect dark mode (class strategy)
-        const check = () => setIsDark(document.documentElement.classList.contains('dark'));
-        check();
-        const observer = new MutationObserver(check);
-        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-        return () => observer.disconnect();
-    }, []);
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true, offset: 50 });
+    // Detect dark mode (class strategy)
+    const check = () =>
+      setIsDark(document.documentElement.classList.contains("dark"));
+    check();
+    const observer = new MutationObserver(check);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, []);
 
-    return (
-        <main>
-            {/* Hero Section */}
-            <section className="video-hero mt-24">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    src="/images/banner.png"
-                    alt="Careers"
-                    className="video-hero-bg"
-                />
-                <div className="video-hero-content text-center px-4 max-w-4xl">
-                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-[0_8px_20px_rgba(0,0,0,0.55)]" data-aos="fade-up">
-                        CAREERS
-                    </h1>
-                    <p className="text-xl md:text-2xl font-medium leading-loose max-w-3xl mx-auto" style={{ color: '#ffffff' }} data-aos="fade-up" data-aos-delay="100">
-                        JOIN OUR TEAM
-                    </p>
-                </div>
-            </section>
+  return (
+    <main>
+      {/* Hero Section */}
+      <section className="video-hero mt-24">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/banner.png" alt="Careers" className="video-hero-bg" />
+        <div className="video-hero-content text-center px-4 max-w-4xl">
+          <h1
+            className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-[0_8px_20px_rgba(0,0,0,0.55)]"
+            data-aos="fade-up"
+          >
+            CAREERS
+          </h1>
+          <p
+            className="text-xl md:text-2xl font-medium leading-loose max-w-3xl mx-auto"
+            style={{ color: "#ffffff" }}
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            JOIN OUR TEAM
+          </p>
+        </div>
+      </section>
 
-            {/* Page Content */}
-            <section className="py-24 bg-white dark:bg-darkmode">
-                <div className="container overflow-hidden">
-                    {!selectedJob ? (
-                        <CurrentOpenings
-                            hoveredJob={hoveredJob}
-                            isDark={isDark}
-                            onHover={setHoveredJob}
-                            onSelect={setSelectedJob}
-                        />
-                    ) : (
-                        <FullJobDetail
-                            job={selectedJob}
-                            onBack={() => setSelectedJob(null)}
-                        />
-                    )}
-                </div>
-            </section>
+      {/* Page Content */}
+      <section className="py-24 bg-white dark:bg-darkmode">
+        <div className="container overflow-hidden">
+          {!selectedJob ? (
+            <CurrentOpenings
+              hoveredJob={hoveredJob}
+              isDark={isDark}
+              onHover={setHoveredJob}
+              onSelect={setSelectedJob}
+            />
+          ) : (
+            <FullJobDetail
+              job={selectedJob}
+              onBack={() => setSelectedJob(null)}
+            />
+          )}
+        </div>
+      </section>
 
-            {/* Bottom CTA — only show when NOT viewing job details */}
-            {!selectedJob && <CTAcareers />}
-        </main>
-    );
+      {/* Bottom CTA — only show when NOT viewing job details */}
+      {!selectedJob && <CTAcareers />}
+    </main>
+  );
 }

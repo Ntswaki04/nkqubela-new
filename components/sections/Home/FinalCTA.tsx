@@ -60,8 +60,10 @@ export default function FinalCTA() {
             </h2>
             <p
               className="text-lg md:text-xl max-w-3xl mx-auto drop-shadow-md"
-              style={{ color: 'rgba(255,255,255,0.9)' }}
-              style={{ textShadow: "0 1px 6px rgba(0,0,0,0.5)" }}
+              style={{
+                color: "rgba(255,255,255,0.9)",
+                textShadow: "0 1px 6px rgba(0,0,0,0.5)",
+              }}
             >
               Partner with Nkqubela Technologies for cutting-edge ICT solutions
               tailored to your unique needs.

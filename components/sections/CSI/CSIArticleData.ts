@@ -1,4 +1,4 @@
-import { Initiative } from './CSIData';
+import { Initiative } from './csiData';
 
 export type ArticleSection =
     | { type: 'paragraph'; text: string }

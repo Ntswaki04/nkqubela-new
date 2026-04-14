@@ -9,7 +9,7 @@ import Servicespage from "../Servicespage";
 import TeamPage from "../Teampage";
 import CSIArticleTemplate from "@/components/sections/CSI/CSIArticleTemplate";
 
-import { initiatives } from "@/components/sections/CSI/CSIData";
+import { initiatives } from "@/components/sections/CSI/csiData";
 
 export function generateStaticParams() {
   // Generate statically for all basic pages
