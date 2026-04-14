@@ -45,11 +45,12 @@ export default function CompanyHighlights({
     <section className="bg-IcyBreeze dark:bg-darklight py-12 lg:py-20 overflow-hidden relative">
       {/* Blending gradient from leadership section */}
       <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white dark:from-darkmode to-transparent dark:to-transparent pointer-events-none"></div>
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 pt-8 lg:pt-10 relative z-10">
-        <div className="grid lg:grid-cols-2 items-start gap-8 sm:gap-10 lg:gap-20">
+      <div className="container mx-auto px-4 sm:px-6 pt-8 lg:pt-10 relative z-10">
+        <div className="grid lg:grid-cols-2 items-stretch gap-8 sm:gap-10 lg:gap-20 min-h-[350px]">
           <div
-            className="order-2 lg:order-1 min-w-0 w-full space-y-5 sm:space-y-6 lg:space-y-8 rounded-[28px] bg-white/80 px-4 pt-6 pb-3 sm:px-7 sm:pt-8 sm:pb-4 lg:pt-8 lg:pb-8 text-center shadow-lg ring-1 ring-black/5 dark:bg-white/5 dark:ring-white/10"
+            className="order-2 lg:order-1 min-w-0 w-full h-full flex flex-col justify-center space-y-5 sm:space-y-6 lg:space-y-8 rounded-[28px] bg-white/80 px-4 pt-6 pb-3 sm:px-7 sm:pt-8 sm:pb-4 lg:pt-8 lg:pb-8 text-center shadow-lg ring-1 ring-black/5 dark:bg-white/5 dark:ring-white/10"
             data-aos="fade-right"
+            style={{ height: "100%" }}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
               Driving Digital{" "}
@@ -80,39 +81,24 @@ export default function CompanyHighlights({
             </div>
           </div>
           <div
-            className="order-1 lg:order-2 relative min-w-0 w-full max-w-none"
+            className="order-1 lg:order-2 relative min-w-0 w-full max-w-none h-full flex items-center justify-center"
             data-aos="fade-left"
+            style={{ height: "100%" }}
           >
-            <div
-              ref={swiperRef}
-              className="swiper highlightSwiper w-full max-w-full rounded-[28px] shadow-2xl overflow-hidden glass p-3 sm:p-4"
-            >
-              <div className="swiper-wrapper">
-                <div
-                  className="swiper-slide relative group cursor-pointer"
-                  onClick={() =>
-                    openVideoModal(
-                      "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1",
-                    )
-                  }
-                >
-                  <Image
-                    src="/images/highlight/slide-1.png"
-                    alt="Highlight"
-                    width={800}
-                    height={350}
-                    className="w-full h-[210px] sm:h-[300px] lg:h-[350px] object-cover rounded-14"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 sm:w-20 sm:h-20 bg-primary/90 text-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                      <span
-                        className="iconify text-xl sm:text-3xl"
-                        data-icon="ic:round-play-arrow"
-                      ></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="w-full h-[210px] sm:h-[300px] lg:h-full flex items-center justify-center">
+              <Image
+                src="/images/hero/highlights.png"
+                alt="Company Highlights"
+                width={700}
+                height={350}
+                className="w-full h-full object-cover rounded-14 shadow-2xl bg-black"
+                priority
+                style={{
+                  objectFit: "cover",
+                  borderRadius: "14px",
+                  background: "black",
+                }}
+              />
             </div>
           </div>
         </div>
