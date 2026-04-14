@@ -29,9 +29,7 @@ export default function ServicesCTA() {
     ]
       .filter((line, i) => i >= 3 || line !== "")
       .join("\n");
-
-    const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -51,10 +49,16 @@ export default function ServicesCTA() {
             <div className="absolute inset-0 bg-black/50 mix-blend-multiply" />
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
               <div className="space-y-6 max-w-2xl text-center lg:text-left">
-                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                <h2
+                  className="text-4xl md:text-[2.6rem] font-bold leading-tight"
+                  style={{ color: "#ffffff" }}
+                >
                   Need a Custom Solution?
                 </h2>
-                <p className="text-white/90 text-xl font-medium">
+                <p
+                  className="text-[1.1rem] font-medium max-w-xl"
+                  style={{ color: "rgba(255,255,255,0.9)" }}
+                >
                   Our team is ready to design an ICT strategy tailored to your
                   business needs.
                 </p>
@@ -65,28 +69,25 @@ export default function ServicesCTA() {
                   onClick={() => setIsOpen(true)}
                   className="bg-primary text-white hover:bg-white hover:text-primary transition-colors px-8 py-4 rounded-full font-bold shadow-lg block whitespace-nowrap"
                 >
-                    {/* Dark shade removed for clear image background */}
-                    <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-                        <div className="space-y-6 max-w-2xl text-center lg:text-left">
-                            <h2 className="text-4xl md:text-5xl font-bold leading-tight" style={{ color: '#ffffff' }}>
-                                Need a Custom Solution?
-                            </h2>
-                            <p className="text-xl font-medium" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                                Our team is ready to design an ICT strategy tailored to your business needs.
-                            </p>
-                        </div>
-                        <div>
-                            <Link
-                                href="/contact"
-                                className="bg-[#00296D] text-white border border-[#00296D] hover:bg-white hover:text-black transition-colors px-10 py-2.5 rounded-full font-bold shadow-lg block whitespace-nowrap text-sm"
-                            >
-                                Contact Us Today
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+                  Get in Touch
+                </button>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
 
+      {isOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+          <div className="bg-white dark:bg-darkmode rounded-2xl shadow-2xl w-full max-w-lg p-8 relative">
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors text-2xl leading-none"
+            >
+              &times;
+            </button>
+            <h3 className="text-2xl font-bold mb-6 dark:text-white">Get in Touch</h3>
             <form className="space-y-5" onSubmit={submitForm}>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -110,7 +111,6 @@ export default function ServicesCTA() {
                   />
                 </div>
               </div>
-
               <div>
                 <label className={labelClass}>Email</label>
                 <input
@@ -121,7 +121,6 @@ export default function ServicesCTA() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-
               <div>
                 <label className={labelClass}>Subject</label>
                 <input
@@ -132,7 +131,6 @@ export default function ServicesCTA() {
                   onChange={(e) => setSubject(e.target.value)}
                 />
               </div>
-
               <div>
                 <label className={labelClass}>Message</label>
                 <textarea
@@ -142,7 +140,6 @@ export default function ServicesCTA() {
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
-
               <div className="flex justify-end">
                 <button
                   type="submit"
