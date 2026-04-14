@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 
@@ -39,7 +39,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer-v-divider hidden lg:block"></div>
+          <div className="footer-v-divider hidden md:block min-h-[inherit]"></div>
 
           {/* Quick Links Column */}
           <div className="footer-column">
@@ -73,7 +73,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="footer-v-divider hidden lg:block"></div>
+          <div className="footer-v-divider hidden md:block min-h-[inherit]"></div>
 
           {/* Contact Us Column */}
           <div className="footer-column">
