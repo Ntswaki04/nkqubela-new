@@ -52,23 +52,14 @@ export default function Services() {
 
             {/* ── SIX PILLARS – JS STICKY SCROLL ── */}
             <section className="bg-white dark:bg-darkmode py-20 relative">
-                <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        maxWidth: 1400,
-                        margin: '0 auto',
-                        padding: '80px 40px 160px',
-                        gap: 80,
-                    }}
-                >
+                <div className="flex flex-col lg:flex-row lg:items-start max-w-[1400px] mx-auto px-6 lg:px-10 pt-16 pb-32 gap-12 lg:gap-20">
                     {/* JS-driven sticky left panel */}
                     <StickyLeft />
 
                     {/* Scrolling right pillar feed */}
-                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 64 }}>
+                    <div className="flex-1 flex flex-col gap-16">
                         {pillars.map((pillar, i) => (
-                            <PillarCard key={pillar.id} pillar={pillar} index={i} isDark={isDark} />
+                            <PillarCard key={pillar.id} pillar={pillar} index={i} isDark={isDark} forceVisible={true} />
                         ))}
                     </div>
                 </div>

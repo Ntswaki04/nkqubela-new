@@ -17,6 +17,15 @@ export default function StickyLeft() {
         const rightCol = rightColRef.current;
         if (!panel || !section || !rightCol) return;
 
+        // On mobile, let CSS sticky handle it
+        if (window.innerWidth < 1024) {
+            panel.style.position = '';
+            panel.style.top = '';
+            panel.style.width = '';
+            panel.style.zIndex = '';
+            return;
+        }
+
         const sectionRect = section.getBoundingClientRect();
         const rightColRect = rightCol.getBoundingClientRect();
         const panelHeight = panel.offsetHeight;
@@ -54,9 +63,9 @@ export default function StickyLeft() {
     }, [update]);
 
     return (
-        /* Outer placeholder preserves layout space */
-        <div style={{ flex: '0 0 380px', position: 'relative', minHeight: 1 }}>
-            <div ref={panelRef} style={{ position: 'absolute', top: 0, width: 380 }}>
+        /* Outer placeholder — full width on mobile, fixed 380px column on desktop */
+        <div className="w-full lg:w-[380px] lg:flex-shrink-0 lg:relative" style={{ minHeight: 1 }}>
+            <div ref={panelRef}>
 
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 bg-white dark:bg-darklight border border-gray-200 dark:border-dark_border rounded-full px-4 py-1.5 text-sm font-bold text-primary mb-7 shadow-sm">
