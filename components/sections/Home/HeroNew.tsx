@@ -11,13 +11,12 @@ const HeroNew = () => {
           }}
         >
           <div
-            className="absolute inset-0 pointer-events-none dark:hidden"
+            className="absolute inset-0 pointer-events-none"
             style={{
               background:
                 "linear-gradient(rgba(1, 17, 32, 0.7), rgba(1, 17, 32, 0.5))",
             }}
           />
-          <div className="absolute inset-0 pointer-events-none hidden dark:block bg-sky-200/15" />
 
           <div className="absolute top-16 sm:top-24 lg:top-28 left-1/2 -translate-x-1/2 z-30 w-[92%] sm:w-[85%] lg:w-auto text-center px-3 sm:px-0 pointer-events-none">
             <h1
@@ -28,7 +27,7 @@ const HeroNew = () => {
               Empowering Digital Transformation
             </h1>
             <p
-              className="mt-3 sm:mt-4 text-xl md:text-2xl text-white/90 leading-loose font-medium max-w-3xl mx-auto"
+              className="mt-3 sm:mt-4 text-xl md:text-2xl text-white dark:text-white leading-loose font-medium max-w-3xl mx-auto"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -38,7 +37,7 @@ const HeroNew = () => {
           </div>
 
           <div
-            className="absolute bottom-10 sm:bottom-12 lg:bottom-14 inset-x-0 z-30 w-full flex justify-center px-4 sm:px-6 lg:px-8"
+            className="absolute top-[300px] sm:top-auto sm:bottom-12 lg:bottom-14 inset-x-0 z-30 w-full flex justify-center px-4 sm:px-6 lg:px-8"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -66,6 +65,7 @@ const HeroNew = () => {
         </div>
       </div>
     </header>
+
   );
 };
 

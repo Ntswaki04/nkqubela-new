@@ -91,9 +91,9 @@ p {
     color: #111111;
 }
 
-.dark p {
+/* .dark p {
     color: #e0e0e0;
-}
+} */
 
 /* Footer overrides — keep white regardless of global p color */
 .footer-copyright p,
