@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
-import { initiatives, ITEMS_PER_PAGE } from './CSIData';
+import { initiatives, ITEMS_PER_PAGE } from './csiData';
 
 interface CSIInitiativesGridProps {
     isDark: boolean;

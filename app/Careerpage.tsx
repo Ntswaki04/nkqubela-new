@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { Job } from '@/components/sections/Careers/Jobdata';
-import CurrentOpenings from '@/components/sections/Careers/ CurrentOpenings';
-import FullJobDetail from '@/components/sections/Careers/FullJobDetail';
-import CTAcareers from '@/components/sections/Careers/CTAcareers';
+import { Job } from '@/components/sections/careers/Jobdata';
+import CurrentOpenings from '@/components/sections/careers/ CurrentOpenings';
+import FullJobDetail from '@/components/sections/careers/FullJobDetail';
+import CTAcareers from '@/components/sections/careers/CTAcareers';
 
 export default function Careers() {
     const [selectedJob, setSelectedJob] = useState<Job | null>(null);

@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 import { notFound } from 'next/navigation';
 import CSIArticleLayout from '@/components/CSIArticleLayout';
 import ImageGallery from '@/components/ImageGallery';
-import { initiatives } from '@/components/sections/CSI/CSIData';
+import { initiatives } from '@/components/sections/CSI/csiData';
 import { csiArticlesData } from '@/components/sections/CSI/CSIArticleData';
 
 export default function CSIArticleTemplate({ slug }: { slug: string }) {

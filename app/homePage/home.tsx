@@ -1,18 +1,21 @@
-// app/home.tsx
+// app/homePage/home.tsx
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, Suspense } from 'react';
 import type SwiperType from 'swiper';
 import ServicesCarousel from '@/components/sections/Home/ServicesCarousel';
 import LeadershipTeam from '@/components/sections/Home/LeadershipTeam';
 import CompanyHighlights from '@/components/sections/Home/CompanyHighlights';
-//import Testimonials from '@/components/sections/Home/Testimonials';
 import FinalCTA from '@/components/sections/Home/FinalCTA';
 import VideoModal from '@/components/VideoModals/VideoModal';
 import HeroNew from '@/components/sections/Home/HeroNew';
 
+// Loading fallback for interactive sections
+const SectionSkeleton = () => (
+    <div className="w-full h-96 bg-gradient-to-b from-gray-200 to-gray-100 dark:from-gray-700 dark:to-gray-800 animate-pulse" />
+);
+
 export default function Home() {
-    const [isClient, setIsClient] = useState(false);
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
     const [videoUrl, setVideoUrl] = useState('');
 
@@ -22,11 +25,6 @@ export default function Home() {
         highlight?: SwiperType;
         testimonial?: SwiperType;
     }>({});
-
-    useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setIsClient(true);
-    }, []);
 
     // Video Modal functions
     const openVideoModal = (url: string) => {
@@ -52,45 +50,34 @@ export default function Home() {
         document.body.style.overflow = '';
     };
 
-    // Don't render anything until client-side to prevent hydration mismatch
-    if (!isClient) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                    <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto"></div>
-                    <p className="mt-4 text-primary">Loading...</p>
-                </div>
-            </div>
-        );
-    }
-
-    // app/home.tsx 
     return (
         <>
             <main>
                 {/* Hero Section */}
                 <HeroNew />
 
-                {/* Services Carousel - New Component */}
-                <ServicesCarousel />
-
-                {/* Solutions Carousel */}
-                {/*<SolutionsCarousel swiperInstance={swiperInstances} />*/}
+                {/* Services Carousel - Wrapped in Suspense for better SSR streaming */}
+                <Suspense fallback={<SectionSkeleton />}>
+                    <ServicesCarousel />
+                </Suspense>
 
                 {/* Leadership Team */}
-                <LeadershipTeam />
+                <Suspense fallback={<SectionSkeleton />}>
+                    <LeadershipTeam />
+                </Suspense>
 
                 {/* Company Highlights */}
-                <CompanyHighlights
-                    swiperInstance={swiperInstances}
-                    openVideoModal={openVideoModal}
-                />
-
-                {/* Testimonials */}
-                {/*<Testimonials swiperInstance={swiperInstances} />*/}
+                <Suspense fallback={<SectionSkeleton />}>
+                    <CompanyHighlights
+                        swiperInstance={swiperInstances}
+                        openVideoModal={openVideoModal}
+                    />
+                </Suspense>
 
                 {/* Final CTA */}
-                <FinalCTA />
+                <Suspense fallback={<SectionSkeleton />}>
+                    <FinalCTA />
+                </Suspense>
             </main>
 
             {/* Video Modal */}

@@ -25,12 +25,67 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Nkqubela Technologies",
-  description: "Where Technology Meets Tomorrow",
+  metadataBase: new URL("https://nkqubela.co.za"),
+  title: {
+    default: "Nkqubela Technologies | ICT Solutions",
+    template: "%s | Nkqubela Technologies",
+  },
+  description:
+    "Innovative ICT solutions designed to accelerate growth and modernize operations. Digital transformation, cloud services, and enterprise technology.",
+  keywords: [
+    "ICT solutions",
+    "digital transformation",
+    "technology services",
+    "South Africa",
+    "enterprise software",
+    "cloud services",
+  ],
+  authors: [
+    {
+      name: "Nkqubela Technologies",
+      url: "https://nkqubela.co.za",
+    },
+  ],
+  creator: "Nkqubela Technologies",
+  openGraph: {
+    type: "website",
+    locale: "en_ZA",
+    url: "https://nkqubela.co.za",
+    images: [
+      {
+        url: "/images/logo/Nkqubela%20Tech%20emblem.png",
+        width: 1200,
+        height: 630,
+        alt: "Nkqubela Technologies",
+      },
+    ],
+    siteName: "Nkqubela Technologies",
+    title: "Nkqubela Technologies | ICT Solutions",
+    description:
+      "Innovative ICT solutions designed to accelerate growth and modernize operations.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nkqubela Technologies | ICT Solutions",
+    description:
+      "Innovative ICT solutions designed to accelerate growth and modernize operations.",
+    images: ["/images/logo/Nkqubela%20Tech%20emblem.png"],
+  },
   icons: {
     icon: "/images/logo/Nkqubela%20Tech%20emblem.png",
     shortcut: "/images/logo/Nkqubela%20Tech%20emblem.png",
     apple: "/images/logo/Nkqubela%20Tech%20emblem.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
 };
 
