@@ -45,6 +45,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const { slug } = params;
+  const defaultOgImage = "/images/logo/Nkqubela%20Tech%20emblem.png";
 
   // Check if it's a known main page
   if (metadataMap[slug]) {
@@ -52,16 +53,28 @@ export async function generateMetadata({
     return {
       title: meta.title,
       description: meta.description,
+      alternates: {
+        canonical: `/${slug}`,
+      },
       openGraph: {
         title: meta.title,
         description: meta.description,
         type: "website",
         url: `https://nkqubela.co.za/${slug}`,
+        images: [
+          {
+            url: defaultOgImage,
+            width: 1200,
+            height: 630,
+            alt: "Nkqubela Technologies",
+          },
+        ],
       },
       twitter: {
         card: "summary_large_image",
         title: meta.title,
         description: meta.description,
+        images: [defaultOgImage],
       },
     };
   }
@@ -72,6 +85,9 @@ export async function generateMetadata({
     return {
       title: `${csiInitiative.title} | Nkqubela Technologies`,
       description: csiInitiative.desc,
+      alternates: {
+        canonical: csiInitiative.slug,
+      },
       openGraph: {
         title: csiInitiative.title,
         description: csiInitiative.desc,
@@ -90,7 +106,7 @@ export async function generateMetadata({
         card: "summary_large_image",
         title: csiInitiative.title,
         description: csiInitiative.desc,
-        images: [csiInitiative.img],
+        images: [csiInitiative.img || defaultOgImage],
       },
     };
   }

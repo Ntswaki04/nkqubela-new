@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     default: "Nkqubela Technologies | ICT Solutions",
     template: "%s | Nkqubela Technologies",
   },
+  alternates: {
+    canonical: "/",
+  },
   description:
     "Innovative ICT solutions designed to accelerate growth and modernize operations. Digital transformation, cloud services, and enterprise technology.",
   keywords: [
@@ -94,12 +97,49 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Nkqubela Technologies",
+    url: "https://nkqubela.co.za",
+    logo: "https://nkqubela.co.za/images/logo/Nkqubela%20Tech%20emblem.png",
+    sameAs: [],
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Nkqubela Technologies",
+    url: "https://nkqubela.co.za",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://nkqubela.co.za/?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <html lang="en">
       <head>
         <Script
           src="https://code.iconify.design/3/3.1.0/iconify.min.js"
           strategy="beforeInteractive"
+        />
+        <Script
+          id="organization-jsonld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <Script
+          id="website-jsonld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
+          }}
         />
       </head>
       <body
