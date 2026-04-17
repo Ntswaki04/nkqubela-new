@@ -11,7 +11,7 @@ export default function Mission() {
                             <span className="text-primary text-xs font-bold uppercase tracking-widest">Our Mission</span>
                         </div>
                         <h2 className="text-5xl md:text-6xl font-bold dark:text-white leading-tight uppercase">MISSION</h2>
-                        <p className="text-base leading-relaxed font-normal text-black dark:text-darktext" style={{ fontFamily: 'var(--font-poppins)' }}>
+                        <p className="text-base leading-relaxed font-normal text-black dark:text-gray-300" style={{ fontFamily: 'var(--font-poppins)' }}>
                             At Nkqubela Technologies, our mission is to embody our core values of innovation, disruption,
                             and agility. By aligning our resources strategically, we optimize the quality of our
                             end-products and deliver a superior customer service experience. We foster a culture of

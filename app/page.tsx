@@ -19,4 +19,4 @@ export const metadata: Metadata = {
   },
 };
 
-export { default } from './homePage/home';
+export { default } from "./homePage/home";

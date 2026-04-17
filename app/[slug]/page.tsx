@@ -7,7 +7,6 @@ import Careerpage from "../Careerpage";
 import Contactpage from "../Contactpage";
 import CSIpage from "../CSIpage";
 import Servicespage from "../Servicespage";
-import TeamPage from "../Teampage";
 import CSIArticleTemplate from "@/components/sections/CSI/CSIArticleTemplate";
 
 import { initiatives } from "@/components/sections/CSI/csiData";
@@ -37,16 +36,6 @@ const metadataMap: Record<string, { title: string; description: string }> = {
     title: "Corporate Social Initiatives | Nkqubela Technologies",
     description:
       "Learn about Nkqubela Technologies' corporate social responsibility initiatives, community programs, and social impact projects.",
-  },
-  team: {
-    title: "Our Leadership Team | Nkqubela Technologies",
-    description:
-      "Meet the expert leadership team driving innovation at Nkqubela Technologies. Discover the executives and specialists behind our success.",
-  },
-  teams: {
-    title: "Our Leadership Team | Nkqubela Technologies",
-    description:
-      "Meet the expert leadership team driving innovation at Nkqubela Technologies. Discover the executives and specialists behind our success.",
   },
 };
 
@@ -78,9 +67,7 @@ export async function generateMetadata({
   }
 
   // Check if it's a CSI initiative
-  const csiInitiative = initiatives.find(
-    (init) => init.slug === `/${slug}`
-  );
+  const csiInitiative = initiatives.find((init) => init.slug === `/${slug}`);
   if (csiInitiative) {
     return {
       title: `${csiInitiative.title} | Nkqubela Technologies`,
@@ -122,8 +109,6 @@ export function generateStaticParams() {
     { slug: "contact" },
     { slug: "csi" },
     { slug: "services" },
-    { slug: "team" },
-    { slug: "teams" },
   ];
 
   // AND dynamically generate static paths for all CSI initiatives from the data!
@@ -147,10 +132,6 @@ export default function DynamicPage({ params }: { params: { slug: string } }) {
       return <CSIpage />;
     case "services":
       return <Servicespage />;
-    case "team":
-      return <TeamPage />;
-    case "teams":
-      return <TeamPage />;
   }
 
   // If it's none of the core pages, check if it's a known CSI slug dynamically by looking at the data

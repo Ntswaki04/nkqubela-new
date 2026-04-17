@@ -81,7 +81,7 @@ export default function LeadershipTeam() {
                 data-aos-delay="100"
               >
                 <Button
-                  href="/teams"
+                  href="/team"
                   variant="outline"
                   className="!rounded-full !cursor-pointer"
                 >
@@ -147,7 +147,7 @@ export default function LeadershipTeam() {
               data-aos-delay="100"
             >
               <Button
-                href="/teams"
+                href="/team"
                 variant="outline"
                 className="!rounded-full !cursor-pointer"
               >

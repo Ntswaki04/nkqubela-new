@@ -103,7 +103,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${dmSans.variable} ${inter.variable} ${poppins.variable} font-sans dark:bg-darkmode`}
+        className={`${dmSans.variable} ${inter.variable} ${poppins.variable} dark:bg-darkmode`}
       >
         <Header />
         <main className="min-h-screen">{children}</main>
