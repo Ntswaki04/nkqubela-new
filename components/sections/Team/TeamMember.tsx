@@ -55,8 +55,8 @@ export default function TeamMember({ name, role, bio, img, reverse }: TeamMember
 
                 <div className={`text-[0.65rem] md:text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest mt-2 flex items-center justify-center lg:justify-start gap-2 ${reverse ? 'lg:justify-end' : ''}`}>
                     <span>{role}</span>
-                    <span className="opacity-40">/</span>
-                    <span className="text-gray-600 dark:text-gray-300">NKQUBELA</span>
+                    {/* <span className="opacity-40">/</span>
+                    <span className="text-gray-600 dark:text-gray-300">Xhanti</span> */}
                 </div>
             </div>
 
