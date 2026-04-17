@@ -89,7 +89,7 @@ export default function ContactInfoTable({ isDark }: ContactInfoTableProps) {
                             </div>
 
                             {/* Arrow icon */}
-                            <div
+                            {/* <div
                                 className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center transition-all duration-300"
                                 style={{
                                     backgroundColor: hoveredRow === item.label ? '#072B61' : 'transparent',
@@ -98,7 +98,7 @@ export default function ContactInfoTable({ isDark }: ContactInfoTableProps) {
                                 }}
                             >
                                 <Icon icon="ic:round-arrow-forward" className="text-xl" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 ))}
