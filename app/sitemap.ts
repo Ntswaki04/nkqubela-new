@@ -57,12 +57,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Dynamic CSI initiative pages
-  const csiPages: MetadataRoute.Sitemap = initiatives.map((initiative) => ({
+  const csiPagesRaw: MetadataRoute.Sitemap = initiatives.map((initiative) => ({
     url: `${BASE_URL}${initiative.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
+
+  const seen = new Set<string>();
+  const csiPages = csiPagesRaw.filter((p) => {
+    if (seen.has(p.url)) return false;
+    seen.add(p.url);
+    return true;
+  });
 
   return [...staticPages, ...csiPages];
 }
