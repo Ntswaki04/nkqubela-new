@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
+type Status = "idle" | "loading" | "success" | "error";
+
 export default function FinalCTA() {
   const [isOpen, setIsOpen] = useState(false);
   const [firstName, setFirstName] = useState("");
@@ -10,6 +12,8 @@ export default function FinalCTA() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const inputClass =
     "w-full px-5 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-darklight focus:ring-2 focus:ring-primary/30 focus:border-transparent outline-none transition-all dark:text-white";
@@ -17,21 +21,36 @@ export default function FinalCTA() {
   const labelClass =
     "block text-xs font-bold mb-2 uppercase tracking-widest text-gray-500 dark:text-gray-400";
 
-  const submitForm = (e: React.FormEvent) => {
+  const submitForm = async (e: React.FormEvent) => {
     e.preventDefault();
-    const to = "Info@nkqubela.co.za";
-    const fullName = `${firstName} ${lastName}`.trim();
-    const body = [
-      fullName ? `From: ${fullName}` : "",
-      email ? `Reply-to: ${email}` : "",
-      "",
-      message,
-    ]
-      .filter((line, i) => i >= 3 || line !== "")
-      .join("\n");
+    setStatus("loading");
+    setErrorMsg("");
 
-    const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, email, subject, message }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setErrorMsg(data.error ?? "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      setStatus("success");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+    } catch {
+      setErrorMsg("Network error. Please check your connection and try again.");
+      setStatus("error");
+    }
   };
 
   return (
@@ -71,7 +90,11 @@ export default function FinalCTA() {
             <div className="mx-auto grid w-full max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
               <button
                 type="button"
-                onClick={() => setIsOpen(true)}
+                onClick={() => {
+                  setIsOpen(true);
+                  setStatus("idle");
+                  setErrorMsg("");
+                }}
                 className="inline-flex w-full items-center justify-center border-2 border-transparent bg-primary px-10 py-4 font-bold text-white rounded-full hover:bg-[#5b8cf5] transition-colors shadow-xl"
               >
                 Get Started Today
@@ -103,78 +126,116 @@ export default function FinalCTA() {
               <button
                 type="button"
                 className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-darklight"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  setStatus("idle");
+                  setErrorMsg("");
+                }}
                 aria-label="Close form"
               >
                 ×
               </button>
             </div>
 
-            <form className="space-y-5" onSubmit={submitForm}>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className={labelClass}>First Name</label>
-                  <input
-                    type="text"
-                    className={inputClass}
-                    placeholder="First Name"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label className={labelClass}>Last Name</label>
-                  <input
-                    type="text"
-                    className={inputClass}
-                    placeholder="Last Name"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className={labelClass}>Email</label>
-                <input
-                  type="email"
-                  className={inputClass}
-                  placeholder="you@example.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className={labelClass}>Subject</label>
-                <input
-                  type="text"
-                  className={inputClass}
-                  placeholder="How can we help?"
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
-                />
-              </div>
-
-              <div>
-                <label className={labelClass}>Message</label>
-                <textarea
-                  className={`${inputClass} min-h-[140px] resize-none`}
-                  placeholder="Your message..."
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                />
-              </div>
-
-              <div className="flex justify-end">
+            {status === "success" ? (
+              <div className="space-y-4 rounded-xl border border-green-200 bg-green-50 px-5 py-6 text-center dark:border-green-900 dark:bg-green-950/30">
+                <h4 className="text-xl font-bold text-green-700 dark:text-green-400">
+                  Form successfully submitted
+                </h4>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  We&apos;ve received your message and will get back to you
+                  shortly.
+                </p>
                 <button
-                  type="submit"
-                  className="inline-flex items-center gap-2 py-3 px-7 font-bold rounded-full text-white bg-[#072B61] hover:bg-[#05204a] transition-colors"
+                  type="button"
+                  onClick={() => {
+                    setStatus("idle");
+                    setErrorMsg("");
+                  }}
+                  className="inline-flex items-center justify-center rounded-full bg-[#072B61] px-6 py-3 font-bold text-white transition-colors hover:bg-[#05204a]"
                 >
-                  Submit Message
+                  Send another message
                 </button>
               </div>
-            </form>
+            ) : (
+              <form className="space-y-5" onSubmit={submitForm} noValidate>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelClass}>First Name</label>
+                    <input
+                      type="text"
+                      required
+                      className={inputClass}
+                      placeholder="First Name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                    />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Last Name</label>
+                    <input
+                      type="text"
+                      required
+                      className={inputClass}
+                      placeholder="Last Name"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className={labelClass}>Email</label>
+                  <input
+                    type="email"
+                    required
+                    className={inputClass}
+                    placeholder="you@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+
+                <div>
+                  <label className={labelClass}>Subject</label>
+                  <input
+                    type="text"
+                    required
+                    className={inputClass}
+                    placeholder="How can we help?"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                  />
+                </div>
+
+                <div>
+                  <label className={labelClass}>Message</label>
+                  <textarea
+                    required
+                    className={`${inputClass} min-h-[140px] resize-none`}
+                    placeholder="Your message..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                </div>
+
+                {status === "error" && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/30 dark:text-red-300">
+                    {errorMsg}
+                  </div>
+                )}
+
+                <div className="flex justify-end">
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="inline-flex items-center gap-2 py-3 px-7 font-bold rounded-full text-white bg-[#072B61] hover:bg-[#05204a] transition-colors disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {status === "loading" ? "Sending..." : "Submit Message"}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       )}

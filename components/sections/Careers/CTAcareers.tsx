@@ -2,38 +2,50 @@
 "use client";
 import { Icon } from "@iconify/react";
 export default function CTAcareers() {
-    return (
-        <section className="pb-24">
-            <div className="container px-4">
-                <div
-                    className="cta-section-custom relative overflow-hidden rounded-3xl p-10 md:py-16 md:px-16"
-                    style={{ backgroundImage: 'url("/images/CTA%20jobs.png")', backgroundSize: 'cover', backgroundPosition: 'bottom' }}
-                    data-aos="zoom-in"
-                >
-                    <div className="absolute inset-0 rounded-3xl"></div>
-                    <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-                        <div className="space-y-5 max-w-2xl text-center lg:text-left">
-                            <h2 className="text-4xl md:text-[2.6rem] font-bold leading-tight" style={{ color: '#ffffff' }}>
-                                Want to Collaborate on a <br className="hidden md:block" /> New Role?
-                            </h2>
-                            <p className="text-[1.1rem] font-medium max-w-xl" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                                Our team is always looking for talent. If you don't see a fit, send your CV anyway!
-                            </p>
-                        </div>
-                        <div>
-                            <a
-                                href="mailto:Info@nkqubela.co.za"
-                                className="inline-flex items-center gap-3 px-10 py-2.5 rounded-full font-bold shadow-lg text-white text-sm transition-all duration-300 group/cta bg-[#00296D] border border-[#00296D] hover:bg-white hover:text-black whitespace-nowrap"
-                            >
-                                Send your CV
-                                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/20 transition-transform duration-300 group-hover/cta:translate-x-1">
-                                    <Icon icon="ic:round-arrow-forward" className="text-base" />
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <section className="pb-24">
+      <div className="container px-4">
+        <div
+          className="cta-section-custom relative overflow-hidden rounded-3xl p-10 md:py-16 md:px-16"
+          style={{
+            backgroundImage: 'url("/images/CTA%20jobs.png")',
+            backgroundSize: "cover",
+            backgroundPosition: "bottom",
+          }}
+          data-aos="zoom-in"
+        >
+          <div className="absolute inset-0 rounded-3xl"></div>
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+            <div className="space-y-5 max-w-2xl text-center lg:text-left">
+              <h2
+                className="text-4xl md:text-[2.6rem] font-bold leading-tight"
+                style={{ color: "#ffffff" }}
+              >
+                Want to Collaborate on a <br className="hidden md:block" /> New
+                Role?
+              </h2>
+              <p
+                className="text-[1.1rem] font-medium max-w-xl"
+                style={{ color: "rgba(255,255,255,0.9)" }}
+              >
+                Our team is always looking for talent. If you don't see a fit,
+                send your CV anyway!
+              </p>
             </div>
-        </section>
-    );
+            <div>
+              <a
+                href="mailto:Info@nkqubela.co.za"
+                className="inline-flex items-center gap-3 px-10 py-2.5 rounded-full font-bold shadow-lg text-white text-sm transition-all duration-300 group/cta bg-[#00296D] border border-[#00296D] hover:bg-white hover:text-black whitespace-nowrap"
+              >
+                Send your CV
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/20 transition-transform duration-300 group-hover/cta:translate-x-1">
+                  <Icon icon="ic:round-arrow-forward" className="text-base" />
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
