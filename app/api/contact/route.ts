@@ -39,10 +39,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const smtpSecureValue = process.env.SMTP_SECURE?.trim().toLowerCase() ?? "";
+    const isImplicitTLS = smtpSecureValue === "true" || smtpSecureValue === "1" || smtpSecureValue === "ssl";
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT) || 587,
-      secure: process.env.SMTP_SECURE === "true",
+      // For Office365 on port 587, use STARTTLS (secure: false). Set SMTP_SECURE=true or ssl for implicit TLS.
+      secure: isImplicitTLS,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
