@@ -1,10 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const requiredEnvVars = ["SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS"] as const;
+const requiredEnvVars = [
+  "SMTP_HOST",
+  "SMTP_PORT",
+  "SMTP_USER",
+  "SMTP_PASS",
+] as const;
+
+const contactFormDisabled =
+  process.env.CONTACT_FORM_DISABLED?.trim().toLowerCase() === "true";
 
 export async function POST(req: NextRequest) {
   try {
+    if (contactFormDisabled) {
+      return NextResponse.json(
+        {
+          error:
+            "The contact form is temporarily disabled while SMTP is being updated.",
+        },
+        { status: 503 },
+      );
+    }
+
     const body = await req.json();
     const { firstName, lastName, email, subject, message } = body;
 
@@ -12,7 +30,7 @@ export async function POST(req: NextRequest) {
     if (!firstName || !lastName || !email || !subject || !message) {
       return NextResponse.json(
         { error: "All fields are required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -20,27 +38,33 @@ export async function POST(req: NextRequest) {
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: "Invalid email address." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const missingEnvVars = requiredEnvVars.filter(
-      (key) => !process.env[key] || process.env[key]?.trim() === ""
+      (key) => !process.env[key] || process.env[key]?.trim() === "",
     );
 
     if (missingEnvVars.length > 0) {
-      console.error("Contact form SMTP configuration is incomplete:", missingEnvVars);
+      console.error(
+        "Contact form SMTP configuration is incomplete:",
+        missingEnvVars,
+      );
       return NextResponse.json(
         {
           error:
             "Contact form email is not configured yet. Please try again later or contact info@nkqubela.co.za directly.",
         },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     const smtpSecureValue = process.env.SMTP_SECURE?.trim().toLowerCase() ?? "";
-    const isImplicitTLS = smtpSecureValue === "true" || smtpSecureValue === "1" || smtpSecureValue === "ssl";
+    const isImplicitTLS =
+      smtpSecureValue === "true" ||
+      smtpSecureValue === "1" ||
+      smtpSecureValue === "ssl";
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -79,7 +103,7 @@ export async function POST(req: NextRequest) {
     console.error("Contact form email error:", err);
     return NextResponse.json(
       { error: "Failed to send message. Please try again later." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

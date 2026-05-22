@@ -111,31 +111,23 @@ export default function FinalCTA() {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <button
-            type="button"
-            className="absolute inset-0 z-0 bg-black/60 backdrop-blur-[2px]"
-            onClick={() => setIsOpen(false)}
-            aria-label="Close popup"
-          />
-          <div className="relative z-10 w-full max-w-2xl rounded-2xl bg-white dark:bg-darkmode p-6 sm:p-8 shadow-2xl border border-gray-200 dark:border-gray-700">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-bold dark:text-white">
-                Send Us a Message
-              </h3>
-              <button
-                type="button"
-                className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-darklight"
-                onClick={() => {
-                  setIsOpen(false);
-                  setStatus("idle");
-                  setErrorMsg("");
-                }}
-                aria-label="Close form"
-              >
-                ×
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
+          <div className="bg-white dark:bg-darkmode rounded-2xl shadow-2xl w-full max-w-lg p-8 relative max-h-[90vh] overflow-y-auto">
+            <button
+              type="button"
+              onClick={() => {
+                setIsOpen(false);
+                setStatus("idle");
+                setErrorMsg("");
+              }}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors text-2xl leading-none"
+            >
+              &times;
+            </button>
+
+            <h3 className="text-2xl font-bold mb-6 dark:text-white">
+              Contact Us Today
+            </h3>
 
             {status === "success" ? (
               <div className="space-y-4 rounded-xl border border-green-200 bg-green-50 px-5 py-6 text-center dark:border-green-900 dark:bg-green-950/30">
