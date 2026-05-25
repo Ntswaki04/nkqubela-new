@@ -85,7 +85,11 @@ export default function CSIInitiativesGrid({
                 <img
                   src={init.img}
                   alt={init.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className={`w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 ${
+                    init.img === "/images/mec-awards-golf-group.jpg"
+                      ? "[object-position:50%_28%] md:[object-position:50%_20%]"
+                      : ""
+                  }`}
                 />
                 <div
                   className="absolute inset-0 transition-opacity duration-300"

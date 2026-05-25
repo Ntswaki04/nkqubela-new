@@ -75,9 +75,9 @@ export const metadata: Metadata = {
     images: ["/images/logo/Nkqubela%20Tech%20emblem.png"],
   },
   icons: {
-    icon: "/images/logo/Nkqubela%20Tech%20emblem.png",
-    shortcut: "/images/logo/Nkqubela%20Tech%20emblem.png",
-    apple: "/images/logo/Nkqubela%20Tech%20emblem.png",
+    icon: "/images/logo/Nkq_emblem.png",
+    shortcut: "/images/logo/Nkq_emblem.png",
+    apple: "/images/logo/Nkq_emblem.png",
   },
   robots: {
     index: true,
