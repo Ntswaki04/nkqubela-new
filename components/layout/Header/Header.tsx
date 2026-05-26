@@ -28,6 +28,12 @@ export default function Header() {
   const [hasMounted, setHasMounted] = useState(false);
   const pathname = usePathname();
 
+  const isActiveDesktopLink = (to: string) => {
+    if (!pathname) return false;
+    if (to === "/") return pathname === "/";
+    return pathname === to || pathname.startsWith(`${to}/`);
+  };
+
   // Fix Hydration by only rendering state-dependent UI after mount
   useEffect(() => {
     setHasMounted(true);
@@ -102,7 +108,7 @@ export default function Header() {
                   <Link
                     href={link.to}
                     className={`nav-link ${
-                      pathname === link.to ? "active" : ""
+                      isActiveDesktopLink(link.to) ? "active" : ""
                     }`}
                   >
                     {link.label}
@@ -151,13 +157,13 @@ export default function Header() {
       {mobileOpen && (
         <div
           onClick={closeMobile}
-          className="fixed top-0 left-0 w-full h-full bg-black/50 z-40 backdrop-blur-sm transition-all duration-300"
+          className="fixed top-0 left-0 w-full h-full bg-black/50 z-[60] backdrop-blur-sm transition-all duration-300"
         />
       )}
 
       {/* Mobile Menu */}
       <div
-        className={`mobile-menu ${mobileOpen ? "open" : "closed"} xl:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-darkmode shadow-2xl max-w-xs z-50`}
+        className={`mobile-menu ${mobileOpen ? "open" : "closed"} xl:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-darkmode shadow-2xl max-w-xs`}
       >
         <div className="flex items-center justify-between p-6 border-b dark:border-dark_border">
           <Image
