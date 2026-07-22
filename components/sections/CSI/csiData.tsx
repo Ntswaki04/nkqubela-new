@@ -65,6 +65,14 @@ export const initiatives: Initiative[] = [
         tag: 'Bursaries',
         date: 'Nov 2024',
     },
+    {
+        slug: '/csi-stutterheim',
+        img: '/images/Stutt-tournament/IMG_9038.jpg',
+        title: 'Nkqubela Sponsors Stutterheim Rugby Tournament',
+        desc: 'Nkqubela served as the official sponsor of a community rugby tournament in Stutterheim, supporting youth teams and event logistics.',
+        tag: 'Sponsorship',
+        date: 'Jul 2026',
+    },
 ];
 
 export const focusAreas: FocusArea[] = [

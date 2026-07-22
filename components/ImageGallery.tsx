@@ -15,6 +15,11 @@ interface ImageGalleryProps {
 export default function ImageGallery({ images }: ImageGalleryProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
+    const IMAGES_PER_PAGE = 6;
+    const totalPages = Math.ceil(images.length / IMAGES_PER_PAGE);
+    const startIndex = currentPage * IMAGES_PER_PAGE;
+    const paginatedImages = images.slice(startIndex, startIndex + IMAGES_PER_PAGE);
 
     const openGallery = (index: number) => {
         setCurrentIndex(index);
@@ -54,13 +59,13 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
     return (
         <div className="my-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {images.map((img, index) => (
+                {paginatedImages.map((img, index) => (
                     <div
-                        key={index}
+                        key={startIndex + index}
                         className="overflow-hidden rounded-xl cursor-pointer group shadow-lg"
-                        onClick={() => openGallery(index)}
+                        onClick={() => openGallery(startIndex + index)}
                         data-aos="fade-up"
-                        data-aos-delay={index * 50}
+                        data-aos-delay={(startIndex + index) * 50}
                     >
                         <div className="relative h-72 overflow-hidden">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -75,6 +80,31 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm text-gray-600 dark:text-gray-300">
+                <div>
+                    Showing {startIndex + 1} - {Math.min(startIndex + paginatedImages.length, images.length)} of {images.length} photos
+                </div>
+                <div className="flex items-center gap-2">
+                    <button
+                        type="button"
+                        disabled={currentPage === 0}
+                        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}
+                        className="rounded-full border border-gray-300 bg-white px-4 py-2 text-xs font-semibold text-gray-700 disabled:cursor-not-allowed disabled:opacity-50 hover:bg-gray-50"
+                    >
+                        Previous
+                    </button>
+                    <span className="font-semibold">Page {currentPage + 1} of {totalPages}</span>
+                    <button
+                        type="button"
+                        disabled={currentPage >= totalPages - 1}
+                        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1))}
+                        className="rounded-full border border-gray-300 bg-white px-4 py-2 text-xs font-semibold text-gray-700 disabled:cursor-not-allowed disabled:opacity-50 hover:bg-gray-50"
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
 
             {/* Lightbox Modal */}
